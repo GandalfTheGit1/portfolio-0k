@@ -43,11 +43,11 @@ const CertificateCard = ({
         </h3>
         <p className="text-slate-400 mb-4">{issuer}</p>
 
-        <div className="flex items-center text-indigo-400 text-sm mt-auto">
+        {/*<div className="flex items-center text-indigo-400 text-sm mt-auto">
           <CheckCircle className="w-4 h-4 mr-1" />
           <span>Verified</span>
           <ExternalLink className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
+        </div>*/}
       </div>
     </motion.div>
   )

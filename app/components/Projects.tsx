@@ -62,9 +62,9 @@ export default function Projects() {
       description:
         "Sistema completo para gestión de envíos de contenedores desde EE.UU. hacia Cuba con automatización de procesos desde despacho hasta distribución final.",
       techStack: "Next.js, Material UI, PostgreSQL",
-      link: "#",
+      link: "https://github.com/GandalfTheGit1/Cauto_StoreAdmin.git",
       icon: <Package className="w-6 h-6 text-blue-400" />,
-      type: "private",
+      type: "github",
       category: "Web",
       featured: true,
     },
@@ -84,9 +84,9 @@ export default function Projects() {
       description:
         "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
       techStack: "React, Tailwind CSS, Nest.js",
-      link: "#",
+      link: "https://github.com/GandalfTheGit1/milyTravelFront2.git",
       icon: <ShoppingCart className="w-6 h-6 text-teal-400" />,
-      type: "private",
+      type: "github",
       category: "E-commerce",
     },
     {
@@ -104,9 +104,9 @@ export default function Projects() {
       description:
         "Aplicación web para visualizar eventos en La Habana: cines, teatros, fiestas, conciertos y actividades de entretenimiento. PWA con despliegue en AWS.",
       techStack: "React, Nest.js, MongoDB, PWA, AWS EC2",
-      link: "#",
+      link: "https://github.com/GandalfTheGit1/PerxinsFront.git",
       icon: <Globe className="w-6 h-6 text-violet-400" />,
-      type: "private",
+      type: "github",
       category: "Web",
     },
     {
@@ -114,9 +114,9 @@ export default function Projects() {
       description:
         "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
       techStack: "React, JavaScript, CSS, HTML",
-      link: "#",
+      link: "https://sos-combos.vercel.app/",
       icon: <ShoppingCart className="w-6 h-6 text-orange-400" />,
-      type: "private",
+      type: "demo",
       category: "E-commerce",
     },
     {
@@ -124,9 +124,9 @@ export default function Projects() {
       description:
         "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
       techStack: "LangChain, LangGraph, n8n",
-      link: "#",
+      link: "https://github.com/GandalfTheGit1/accounting-chatbot.git",
       icon: <Bot className="w-6 h-6 text-cyan-400" />,
-      type: "private",
+      type: "github",
       category: "AI",
       featured: true,
     },
@@ -247,9 +247,29 @@ export default function Projects() {
                       <p className="text-slate-300 mb-4">{project.description}</p>
                       <p className="text-sm text-slate-400 mb-6 mt-auto font-mono">{project.techStack}</p>
 
-                      <div className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-slate-600 text-slate-300 cursor-not-allowed">
-                        <span>Proyecto Privado</span>
-                      </div>
+                      {project.type === "github" ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors duration-300"
+                        >
+                          <span>Ver en GitHub</span>
+                        </a>
+                      ) : project.type === "demo" ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors duration-300"
+                        >
+                          <span>Ver Demo</span>
+                        </a>
+                      ) : (
+                        <div className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-slate-600 text-slate-300 cursor-not-allowed">
+                          <span>Proyecto Privado</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Card3D>
