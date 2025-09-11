@@ -7,93 +7,64 @@ import SectionHeading from "./SectionHeading"
 export default function Experience() {
   const experiences = [
     {
-      period: "Jan 2025 - Present",
-      role: "Project Manager",
-      company: "Pramila Foundation",
+      period: "2021 - Presente",
+      role: "Desarrollador Fullstack Freelance",
+      company: "Proyectos Independientes",
       color: "indigo",
       type: "professional",
       projects: [
         {
-          title: "🌐 Website Development & Maintenance",
+          title: "🚀 Sistemas de Automatización Empresarial",
           description:
-            "Oversaw the creation of the foundation's website, including design, functionality, and content updates. Continuously ensuring the website aligns with the foundation's goals and provides an accessible, user-friendly experience.",
+            "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados.",
         },
         {
-          title: "📱 Social Media Strategy & Management",
+          title: "💼 Soluciones de Gestión Interna",
           description:
-            "Developed and implemented social media strategies to increase engagement and visibility for Pramila Foundation. Managed content creation, scheduling, and performance analytics for platforms like Facebook, Instagram, and Twitter.",
+            "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros.",
         },
         {
-          title: "📋 Project Coordination & Team Management",
+          title: "🤖 Integración de IA y LangChain",
           description:
-            "Responsible for overseeing and guiding the activities of the team. Assigned roles and ensured smooth communication across all projects, focusing on both short-term deliverables and long-term goals for the foundation.",
+            "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales.",
         },
       ],
     },
     {
-      period: "Mar 2025 - Present",
-      role: "Web Developer",
-      company: "Unifesto",
+      period: "2020 - 2021",
+      role: "Especialista en Reparación de Hardware",
+      company: "Servicios Técnicos Independientes",
       color: "blue",
       type: "professional",
       projects: [
         {
-          title: "🌐 Event Management Website",
+          title: "🔨 Diagnóstico y Reparación de Equipos",
           description:
-            "Developed an event management platform for Unifesto, a student initiative startup. Responsible for designing the website, implementing key features like event registration, event schedule management, and user authentication.",
+            "Diagnóstico, reparación y mantenimiento de computadoras, laptops y equipos informáticos. Resolución de problemas de hardware y software para clientes particulares y pequeñas empresas.",
         },
         {
-          title: "🛠️ Website Maintenance & Updates",
+          title: "💻 Soporte Técnico Integral",
           description:
-            "Ongoing maintenance of the Unifesto website, ensuring timely updates, bug fixes, and implementing new features based on feedback from users and event organizers.",
+            "Prestación de servicios de soporte técnico, instalación de sistemas operativos, configuración de redes y asesoramiento en compra de equipos informáticos.",
         },
       ],
     },
     {
-      period: "2024 - Present",
-      role: "Vice-President",
-      company: "Microsoft Learn Student Chapter, Malla Reddy University",
+      period: "2021 - 2025",
+      role: "Estudiante de Contabilidad y Finanzas",
+      company: "Formación Académica",
       color: "violet",
-      type: "leadership",
+      type: "education",
       projects: [
         {
-          title: "🚀 Strategic Leadership & Vision",
+          title: "📊 Fundamentos Empresariales",
           description:
-            "Leading strategic initiatives to foster a culture of continuous learning and innovation in cloud computing and AI technologies. Spearheading the chapter's digital transformation journey.",
+            "Formación sólida en principios contables, análisis financiero y gestión empresarial. Base teórica que complementa el desarrollo de soluciones tecnológicas para negocios.",
         },
         {
-          title: "🎯 Community Building & Engagement",
+          title: "💡 Visión Integral de Negocios",
           description:
-            "Orchestrating tech workshops, hackathons, and certification drives to empower students with cutting-edge Microsoft technologies. Building bridges between academia and industry.",
-        },
-        {
-          title: "🌟 Mentorship & Development",
-          description:
-            "Mentoring fellow students in Azure, AI/ML, and modern development practices. Creating pathways for students to achieve Microsoft certifications and industry readiness.",
-        },
-      ],
-    },
-    {
-      period: "2024 - Present",
-      role: "Member",
-      company: "Indian Knowledge Systems (IKS) Club, Malla Reddy University",
-      color: "teal",
-      type: "leadership",
-      projects: [
-        {
-          title: "🔬 Research & Innovation",
-          description:
-            "Contributing to research initiatives that bridge traditional Indian knowledge systems with modern technological applications, exploring AI-driven solutions for ancient wisdom preservation.",
-        },
-        {
-          title: "📚 Knowledge Preservation",
-          description:
-            "Participating in digitization projects to preserve and modernize traditional Indian knowledge systems using contemporary technology frameworks and methodologies.",
-        },
-        {
-          title: "🤝 Collaborative Learning",
-          description:
-            "Engaging in interdisciplinary collaborations to explore the intersection of traditional knowledge and emerging technologies like machine learning and data science.",
+            "Desarrollo de comprensión profunda de procesos empresariales, lo que permite crear soluciones tecnológicas más efectivas y alineadas con objetivos comerciales.",
         },
       ],
     },
@@ -105,7 +76,7 @@ export default function Experience() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Experience & Leadership" />
+        <SectionHeading title="Experiencia" />
 
         <div className="max-w-5xl mx-auto">
           {experiences.map((exp, index) => (

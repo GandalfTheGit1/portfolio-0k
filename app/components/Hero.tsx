@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { GitlabIcon as GitHub, Linkedin, Mail, Cloud } from "lucide-react"
+import { Github as GitHub, Linkedin, Mail, Cloud } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 
 // Enhanced typing animation component
@@ -77,7 +77,7 @@ const CodeEditorAnimation = () => {
 
     // Code lines - shortened to ensure they fit
     const codeLines = [
-      { text: "// AI Engineer Portfolio", color: colors.comment },
+      { text: "// William Marrero Portfolio", color: colors.comment },
       { text: "import React from 'react';", color: colors.keyword },
       { text: "import { motion } from 'framer-motion';", color: colors.keyword },
       { text: "", color: colors.text },
@@ -85,7 +85,7 @@ const CodeEditorAnimation = () => {
       { text: "  const [projects, setProjects] = useState([]);", color: colors.variable },
       { text: "", color: colors.text },
       { text: "  useEffect(() => {", color: colors.function },
-      { text: "    // Fetch projects data", color: colors.comment },
+      { text: "    // Fetch automation projects", color: colors.comment },
       { text: "    fetchProjects().then(data => {", color: colors.function },
       { text: "      setProjects(data);", color: colors.variable },
       { text: "    });", color: colors.text },
@@ -93,7 +93,7 @@ const CodeEditorAnimation = () => {
       { text: "", color: colors.text },
       { text: "  return (", color: colors.keyword },
       { text: '    <div className="portfolio">', color: colors.text },
-      { text: '      <Header title="Sai Pranay" />', color: colors.function },
+      { text: '      <Header title="William Marrero" />', color: colors.function },
       { text: "      <Hero />", color: colors.function },
       { text: "      <Projects data={projects} />", color: colors.function },
       { text: "      <Contact />", color: colors.function },
@@ -239,7 +239,7 @@ const CodeEditorAnimation = () => {
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="text-xs text-slate-400 mx-auto">portfolio.tsx</div>
+        <div className="text-xs text-slate-400 mx-auto">william-portfolio.tsx</div>
       </div>
       <canvas
         ref={canvasRef}
@@ -290,7 +290,7 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display">
             <span className="text-white">
-              <TypingAnimation text="I'm Sai Pranay Tadakamalla" />
+              <TypingAnimation text="Soy William Marrero" />
             </span>
           </h1>
 
@@ -301,13 +301,13 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
           >
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-indigo-300 border border-indigo-500/20">
-              AI Engineer
+              Desarrollador Fullstack
             </span>
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-blue-300 border border-blue-500/20">
-              Web Developer
+              Automatización
             </span>
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-violet-300 border border-violet-500/20">
-              Project Manager
+              Sistemas Internos
             </span>
           </motion.div>
 
@@ -317,8 +317,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Building next-generation applications with AI, ML, and MERN. Transforming ideas into innovative digital
-            experiences through code and creativity.
+            Desarrollador Fullstack especializado en sistemas internos y automatización de procesos empresariales.
+            Experiencia en React, Next.js, Nest.js, Supabase, LangChain y n8n para crear soluciones tecnológicas
+            innovadoras que optimizan operaciones comerciales.
           </motion.p>
 
           <motion.div
@@ -328,30 +329,30 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
           >
             <a
-              href="https://www.linkedin.com/in/sai-pranay-tadakamalla-7570bb1a6/"
+              href="https://www.linkedin.com/in/william-marrero-masferrer/"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="mailto:pranaytadakamalla@gmail.com"
+              href="mailto:masferrerw@gmail.com"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label="Email Contact"
             >
               <Mail className="w-6 h-6" />
             </a>
             <a
-              href="https://github.com/PranayTadakamalla/"
+              href="https://github.com/masferrer"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label="GitHub Profile"
             >
               <GitHub className="w-6 h-6" />
             </a>
             <a
-              href="https://www.cloudskillsboost.google/public_profiles/5843f2b1-b8a3-47c4-a161-cb4c3a58f712"
+              href="https://williammarrero.dev"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
-              aria-label="Google Cloud Skills Boost"
+              aria-label="Portfolio Website"
             >
               <Cloud className="w-6 h-6" />
             </a>
@@ -364,12 +365,12 @@ export default function Hero() {
             transition={{ delay: 1 }}
           >
             <a
-              href="https://drive.google.com/file/d/14WgLh2w7I_XfkK84GNmHnqyz9kjUCuxm/view?usp=sharing"
+              href="/cv-william-marrero.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Download Resume</span>
+              <span>Descargar CV</span>
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
                 →
               </motion.span>
@@ -378,7 +379,7 @@ export default function Hero() {
               onClick={() => smoothScrollTo("about")}
               className="px-8 py-3 border border-indigo-500 text-indigo-300 hover:bg-indigo-600/20 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Explore My Work</span>
+              <span>Explorar Mi Trabajo</span>
               <motion.span animate={{ y: [0, 5, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
                 ↓
               </motion.span>

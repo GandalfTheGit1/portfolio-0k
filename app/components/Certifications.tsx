@@ -86,34 +86,19 @@ const FloatingParticles = () => {
 export default function Certifications() {
   const certifications = [
     {
-      title: "Career Essentials in Generative AI",
-      issuer: "Microsoft & LinkedIn",
+      title: "AI Engineer",
+      issuer: "Scrimba",
       year: 2024,
     },
     {
-      title: "Elements of AI: Introduction to AI",
-      issuer: "University of Helsinki",
-      year: 2024,
-    },
-    {
-      title: "Professional Soft Skills Learning Pathway",
-      issuer: "LinkedIn",
+      title: "Design Thinking",
+      issuer: "Cámara de Comercio de Bogotá",
       year: 2023,
     },
     {
-      title: "Career Essentials in Project Management",
-      issuer: "Microsoft",
-      year: 2024,
-    },
-    {
-      title: "Managing Projects",
-      issuer: "Project Management Institute",
-      year: 2024,
-    },
-    {
-      title: "Introduction to Responsible AI",
-      issuer: "Google",
-      year: 2024,
+      title: "Lic. en Contabilidad y Finanzas",
+      issuer: "Universidad de La Habana",
+      year: 2022,
     },
   ]
 
@@ -134,7 +119,7 @@ export default function Certifications() {
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div style={{ y: headerY, opacity: headerOpacity }}>
-          <SectionHeading title="Certifications" />
+          <SectionHeading title="Certificaciones" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">

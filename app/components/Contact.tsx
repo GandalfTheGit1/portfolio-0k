@@ -57,35 +57,28 @@ export default function Contact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Let's Connect" />
+        <SectionHeading title="Conectemos" />
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           <ContactCard
             icon={Mail}
             title="Email"
-            content="pranaytadakamalla@gmail.com"
-            link="mailto:pranaytadakamalla@gmail.com"
+            content="marrerow613@gmail.com"
+            link="mailto:marrerow613@gmail.com"
             delay={0.1}
             color="indigo"
           />
 
           <ContactCard
             icon={Phone}
-            title="Phone"
-            content="+91 - 86881 83168"
-            link="tel:+918688183168"
+            title="Teléfono"
+            content="+53 5 841 91 39"
+            link="tel:+5358419139"
             delay={0.2}
             color="blue"
           />
 
-          <ContactCard
-            icon={MapPin}
-            title="Location"
-            content="Hyderabad, Telangana, India"
-            link="#"
-            delay={0.3}
-            color="purple"
-          />
+          <ContactCard icon={MapPin} title="Ubicación" content="La Habana, Cuba" link="#" delay={0.3} color="purple" />
         </div>
       </div>
     </section>

@@ -46,19 +46,14 @@ const LanguageProficiency = ({
 export default function Languages() {
   const languages = [
     {
-      name: "Telugu",
-      proficiency: "Native Proficiency",
+      name: "Español",
+      proficiency: "Lengua Nativa",
       level: 5,
     },
     {
-      name: "English",
-      proficiency: "Professional Working Proficiency",
+      name: "Inglés",
+      proficiency: "Competencia Profesional",
       level: 4,
-    },
-    {
-      name: "Hindi",
-      proficiency: "Limited Working Proficiency",
-      level: 3,
     },
   ]
 
@@ -68,9 +63,9 @@ export default function Languages() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Languages" />
+        <SectionHeading title="Idiomas" />
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {languages.map((lang, index) => (
             <LanguageProficiency
               key={index}

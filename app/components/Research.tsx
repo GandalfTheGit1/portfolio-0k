@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Shield, Clock, CheckCircle, ExternalLink, Sparkles } from "lucide-react"
+import { Brain, Clock, CheckCircle, ExternalLink, Sparkles, Code, Database } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // Floating research particles
@@ -95,10 +95,10 @@ const ResearchCard = ({
       <div className="flex items-center justify-between mt-auto">
         <div className="flex items-center text-green-400 text-sm">
           <CheckCircle className="w-4 h-4 mr-1" />
-          <span>Peer Reviewed</span>
+          <span>Implementado</span>
         </div>
         <div className="flex items-center text-cyan-400 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span>Research</span>
+          <span>Proyecto</span>
           <ExternalLink className="w-4 h-4 ml-1" />
         </div>
       </div>
@@ -109,22 +109,31 @@ const ResearchCard = ({
 export default function Research() {
   const publications = [
     {
-      title: "Cyber Chat Bot using GPT Model",
-      journal: "IJARIIT (International Journal of Advance Research, Ideas and Innovations in Technology)",
+      title: "Automatización de Procesos Empresariales con IA",
+      journal: "Proyectos de Sistemas Internos - Empresas de Envíos y Exportación",
       description:
-        "Research on a Cybersecurity-Based Chatbot Using GPT Technology. This groundbreaking study explores the integration of advanced GPT models with cybersecurity frameworks to create intelligent chatbots capable of real-time threat detection, incident response, and security awareness training.",
-      status: "Accepted, Publication Pending",
-      icon: Shield,
+        "Desarrollo e implementación de sistemas de automatización utilizando LangChain, n8n y tecnologías de IA para optimizar procesos empresariales. Incluye automatización de workflows, gestión de documentos y seguimiento de envíos internacionales con reducción del 70% en tiempo de procesamiento manual.",
+      status: "Implementado",
+      icon: Brain,
       color: "cyan",
     },
     {
-      title: "Machine Learning-Enhanced Quantum Cryptography",
-      journal: "JETIR (Journal of Emerging Technologies and Innovative Research)",
+      title: "Sistemas de Gestión Integral para Retail",
+      journal: "Soluciones Tecnológicas Personalizadas - Sector Retail",
       description:
-        "A Study on Enhancing Digital Encryption Through the Integration of Machine Learning and Quantum Cryptographic Systems for Secure Communication. This research investigates the fusion of quantum computing principles with ML algorithms to revolutionize data encryption and secure communication protocols.",
-      status: "Accepted, Publication Pending",
-      icon: Brain,
+        "Creación de plataformas completas de gestión empresarial utilizando React, Next.js, Nest.js y Supabase. Sistemas que integran gestión de inventarios, análisis de ventas, automatización de reportes y dashboards en tiempo real para optimización de operaciones comerciales.",
+      status: "En Producción",
+      icon: Database,
       color: "purple",
+    },
+    {
+      title: "Integración de IA en Atención al Cliente",
+      journal: "Chatbots Inteligentes - Múltiples Sectores Empresariales",
+      description:
+        "Desarrollo de asistentes virtuales utilizando LangChain y LangGraph para automatización de atención al cliente. Implementación de procesamiento de lenguaje natural para resolución automática de consultas, reduciendo tiempo de respuesta en un 85% y mejorando satisfacción del cliente.",
+      status: "Activo",
+      icon: Code,
+      color: "blue",
     },
   ]
 
@@ -160,8 +169,8 @@ export default function Research() {
           transition={{ duration: 0.5 }}
         >
           <SectionHeading
-            title="Research & Publications"
-            subtitle="Pioneering research at the intersection of AI, cybersecurity, and quantum computing"
+            title="Proyectos & Implementaciones"
+            subtitle="Soluciones tecnológicas innovadoras para automatización y optimización empresarial"
           />
         </motion.div>
 
@@ -174,21 +183,21 @@ export default function Research() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="bg-slate-800/50 backdrop-blur-md p-4 rounded-xl border border-cyan-500/20 text-center">
-            <div className="text-2xl font-bold text-cyan-400 mb-1">2</div>
-            <div className="text-slate-300 text-sm">Publications</div>
+            <div className="text-2xl font-bold text-cyan-400 mb-1">8+</div>
+            <div className="text-slate-300 text-sm">Proyectos Implementados</div>
           </div>
           <div className="bg-slate-800/50 backdrop-blur-md p-4 rounded-xl border border-purple-500/20 text-center">
-            <div className="text-2xl font-bold text-purple-400 mb-1">2</div>
-            <div className="text-slate-300 text-sm">Journals</div>
+            <div className="text-2xl font-bold text-purple-400 mb-1">3</div>
+            <div className="text-slate-300 text-sm">Sectores Empresariales</div>
           </div>
           <div className="bg-slate-800/50 backdrop-blur-md p-4 rounded-xl border border-green-500/20 text-center">
-            <div className="text-2xl font-bold text-green-400 mb-1">100%</div>
-            <div className="text-slate-300 text-sm">Acceptance Rate</div>
+            <div className="text-2xl font-bold text-green-400 mb-1">70%</div>
+            <div className="text-slate-300 text-sm">Reducción de Tiempo</div>
           </div>
         </motion.div>
 
         {/* Publications grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {publications.map((pub, index) => (
             <ResearchCard
               key={index}
@@ -213,16 +222,16 @@ export default function Research() {
         >
           <h3 className="text-2xl font-bold text-white mb-6 flex items-center justify-center gap-2">
             <Sparkles className="w-6 h-6 text-cyan-400" />
-            Research Focus Areas
+            Áreas de Especialización
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Artificial Intelligence",
-              "Cybersecurity",
-              "Quantum Computing",
-              "Machine Learning",
-              "Natural Language Processing",
-              "Cryptography",
+              "Automatización de Procesos",
+              "Sistemas Internos",
+              "Inteligencia Artificial",
+              "Desarrollo Fullstack",
+              "Gestión Empresarial",
+              "Optimización de Workflows",
             ].map((area, index) => (
               <motion.span
                 key={area}

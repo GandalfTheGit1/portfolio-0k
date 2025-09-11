@@ -8,8 +8,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" })
 
 export const metadata = {
-  title: "Sai Pranay Tadakamalla | AI Engineer & Developer",
-  description: "Portfolio of Sai Pranay Tadakamalla - AI Engineer, Web Developer, and Project Manager.",
+  title: "William Marrero | Desarrollador Fullstack & Especialista en Automatización",
+  description:
+    "Portfolio de William Marrero - Desarrollador Fullstack con experiencia en React, Next.js, Nest.js, Supabase y automatización de procesos empresariales.",
     generator: 'v0.app'
 }
 

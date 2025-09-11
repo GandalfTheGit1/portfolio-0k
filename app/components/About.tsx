@@ -48,32 +48,32 @@ export default function About() {
     {
       icon: <Code className="w-8 h-8 text-indigo-400" />,
       title: "Frontend",
-      description: "HTML, CSS, JavaScript, React.js",
+      description: "React, Next.js, Tailwind CSS, JavaScript",
     },
     {
       icon: <Server className="w-8 h-8 text-blue-400" />,
       title: "Backend",
-      description: "Python, Java, C, C++, Node.js, Express.js",
+      description: "Nest.js, Node.js, APIs REST",
     },
     {
       icon: <Database className="w-8 h-8 text-violet-400" />,
-      title: "Database",
-      description: "MySQL, MongoDB",
+      title: "Base de Datos",
+      description: "Supabase, PostgreSQL, MongoDB",
     },
     {
       icon: <Brain className="w-8 h-8 text-fuchsia-400" />,
-      title: "AI/ML",
-      description: "Machine Learning, Deep Learning, Data Science",
+      title: "AI/Automatización",
+      description: "LangChain, LangGraph, n8n, RAG",
     },
     {
       icon: <Clipboard className="w-8 h-8 text-sky-400" />,
-      title: "Project Management",
-      description: "Agile, Leadership",
+      title: "Negocios",
+      description: "Contabilidad, Finanzas, Gestión",
     },
     {
       icon: <Settings className="w-8 h-8 text-teal-400" />,
-      title: "Other",
-      description: "Salesforce, Cloud Computing",
+      title: "Otros",
+      description: "React Native, Reparación Hardware",
     },
   ]
 
@@ -84,7 +84,7 @@ export default function About() {
       <ParticleField />
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="About Me" />
+        <SectionHeading title="Sobre Mí" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div
@@ -99,15 +99,19 @@ export default function About() {
                 <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
                   <Brain className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-display">Full-Stack Developer & AI Engineer</h3>
+                <h3 className="text-2xl font-bold text-white font-display">
+                  Desarrollador Fullstack & Especialista en Automatización
+                </h3>
               </div>
 
               <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                Specializing in Front-End, AI/ML, and Project Management. Skilled in MERN, Python, Java, and Salesforce,
-                with expertise in UI/UX, cloud computing, and Microsoft Office.
+                Desarrollador Fullstack con experiencia en sistemas internos, automatización de procesos empresariales y
+                reparación de equipos informáticos. Especializado en React, Next.js, Nest.js, Supabase y tecnologías de
+                IA.
               </p>
               <p className="text-xl text-slate-300 leading-relaxed">
-                Passionate about building scalable, AI-driven solutions and bridging tech with strategic management.
+                Formación en Contabilidad y Finanzas con fuerte orientación a soluciones tecnológicas para negocios. Más
+                de 8 proyectos desarrollados para gestión empresarial en áreas de envíos, exportaciones y retail.
               </p>
             </div>
           </motion.div>

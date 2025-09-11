@@ -4,21 +4,7 @@ import type React from "react"
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
-import {
-  ExternalLink,
-  Github,
-  Cpu,
-  Globe,
-  MessageSquare,
-  Headphones,
-  Utensils,
-  FlaskRoundIcon as Flask,
-  Calculator,
-  TrelloIcon as TicTacToe,
-  Sparkles,
-  Bot,
-  Braces,
-} from "lucide-react"
+import { Cpu, Globe, ShoppingCart, Package, Store, Bot, Sparkles, Smartphone } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // 3D Card effect component
@@ -64,93 +50,105 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
   const categories = [
-    { id: "AI", label: "AI & ML", icon: <Cpu className="w-4 h-4" /> },
-    { id: "Web", label: "Web Apps", icon: <Globe className="w-4 h-4" /> },
-    { id: "Tools", label: "Tools", icon: <Braces className="w-4 h-4" /> },
+    { id: "Web", label: "Aplicaciones Web", icon: <Globe className="w-4 h-4" /> },
+    { id: "AI", label: "IA y Automatización", icon: <Cpu className="w-4 h-4" /> },
+    { id: "E-commerce", label: "Comercio Electrónico", icon: <ShoppingCart className="w-4 h-4" /> },
+    { id: "Mobile", label: "Móvil", icon: <Smartphone className="w-4 h-4" /> },
   ]
 
   const projects = [
     {
-      title: "ElanAI",
-      description: "Advanced conversational AI assistant with natural language processing capabilities",
-      techStack: "ReactJS, Python",
-      link: "https://github.com/PranayTadakamalla/ElanAI",
-      icon: <Bot className="w-6 h-6 text-indigo-400" />,
-      type: "github",
+      title: "TRG - Sistema de Gestión de Envíos",
+      description:
+        "Sistema completo para gestión de envíos de contenedores desde EE.UU. hacia Cuba con automatización de procesos desde despacho hasta distribución final.",
+      techStack: "Next.js, Material UI, PostgreSQL",
+      link: "#",
+      icon: <Package className="w-6 h-6 text-blue-400" />,
+      type: "private",
+      category: "Web",
+      featured: true,
+    },
+    {
+      title: "Routule Print (Elstar)",
+      description:
+        "Plataforma para crear marketplaces e integración vertical de toda la cadena de valor. Facilita a tiendas minoristas crear su sistema sin programadores.",
+      techStack: "Next.js, Tailwind CSS, Supabase",
+      link: "#",
+      icon: <Store className="w-6 h-6 text-indigo-400" />,
+      type: "private",
+      category: "E-commerce",
+      featured: true,
+    },
+    {
+      title: "Comercio Electrónico Mily Travel",
+      description:
+        "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
+      techStack: "React, Tailwind CSS, Nest.js",
+      link: "#",
+      icon: <ShoppingCart className="w-6 h-6 text-teal-400" />,
+      type: "private",
+      category: "E-commerce",
+    },
+    {
+      title: "Maranatha - Sistema de Gestión",
+      description:
+        "Sistema integral de gestión de ventas, mensajería e inventario para tienda de regalos y misceláneas con integración de pagos.",
+      techStack: "Next.js, Tailwind CSS, Supabase",
+      link: "#",
+      icon: <Store className="w-6 h-6 text-green-400" />,
+      type: "private",
+      category: "Web",
+    },
+    {
+      title: "Perxins - Eventos La Habana",
+      description:
+        "Aplicación web para visualizar eventos en La Habana: cines, teatros, fiestas, conciertos y actividades de entretenimiento. PWA con despliegue en AWS.",
+      techStack: "React, Nest.js, MongoDB, PWA, AWS EC2",
+      link: "#",
+      icon: <Globe className="w-6 h-6 text-violet-400" />,
+      type: "private",
+      category: "Web",
+    },
+    {
+      title: "SOS Combo - E-commerce",
+      description:
+        "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
+      techStack: "React, JavaScript, CSS, HTML",
+      link: "#",
+      icon: <ShoppingCart className="w-6 h-6 text-orange-400" />,
+      type: "private",
+      category: "E-commerce",
+    },
+    {
+      title: "AI Bot con RAG",
+      description:
+        "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
+      techStack: "LangChain, LangGraph, n8n",
+      link: "#",
+      icon: <Bot className="w-6 h-6 text-cyan-400" />,
+      type: "private",
       category: "AI",
       featured: true,
     },
     {
-      title: "Cyber Chat Bot",
-      description: "Interactive chatbot platform with advanced conversation capabilities",
-      techStack: "MERN Stack - MongoDB, Express.js, React.js, Node.js",
-      link: "https://cyberchat-g4ii.onrender.com/",
-      icon: <MessageSquare className="w-6 h-6 text-blue-400" />,
-      type: "live",
-      category: "AI",
-    },
-    {
-      title: "Health Assistant",
-      description: "AI-powered health consultation and recommendation system",
-      techStack: "ReactJS, CSS",
-      link: "https://healthassistant-pranaytadakamallas-projects.vercel.app/",
-      icon: <Flask className="w-6 h-6 text-green-400" />,
-      type: "live",
-      category: "AI",
-    },
-    {
-      title: "Text-to-Speech",
-      description: "Convert text to natural-sounding speech with customizable voices",
-      techStack: "ReactJS, JavaScript",
-      link: "https://pranaytexttospeech.vercel.app/",
-      icon: <Headphones className="w-6 h-6 text-violet-400" />,
-      type: "live",
+      title: "Poinger - Mejoras Web",
+      description:
+        "Mejoras en página web empresarial para catálogo de productos con resolución de errores y optimización del sitio.",
+      techStack: "PHP, MySQL",
+      link: "#",
+      icon: <Globe className="w-6 h-6 text-yellow-400" />,
+      type: "private",
       category: "Web",
     },
     {
-      title: "Verses In Motion",
-      description: "Interactive scripture visualization and exploration platform",
-      techStack: "React.js, Tailwind CSS",
-      link: "https://verses-in-motion.vercel.app/",
-      icon: <Globe className="w-6 h-6 text-indigo-400" />,
-      type: "live",
-      category: "Web",
-    },
-    {
-      title: "Mnemoflip",
-      description: "Memory enhancement game with flashcard-based learning",
-      techStack: "Next.js, Tailwind CSS",
-      link: "https://v0-mnemoflip.vercel.app/",
-      icon: <Calculator className="w-6 h-6 text-orange-400" />,
-      type: "live",
-      category: "Web",
-    },
-    {
-      title: "Feast-Find",
-      description: "Restaurant discovery and food recommendation platform",
-      techStack: "MERN Stack - MongoDB, Express.js, React.js, Node.js",
-      link: "https://github.com/PranayTadakamalla/Feast-Find",
-      icon: <Utensils className="w-6 h-6 text-red-400" />,
-      type: "github",
-      category: "Web",
-    },
-    {
-      title: "SimpleSciTools",
-      description: "Scientific calculation and visualization toolkit",
-      techStack: "Python",
-      link: "https://github.com/PranayTadakamalla/SimpleSciTools",
-      icon: <Flask className="w-6 h-6 text-teal-400" />,
-      type: "github",
-      category: "Tools",
-    },
-    {
-      title: "Tic-Tac-Toe Game",
-      description: "Classic two-player game with AI opponent options",
-      techStack: "Python, Django",
-      link: "https://github.com/PranayTadakamalla/Tic-Tac-Toe",
-      icon: <TicTacToe className="w-6 h-6 text-teal-400" />,
-      type: "github",
-      category: "Web",
+      title: "Proyecto React Native",
+      description:
+        "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
+      techStack: "React Native, TypeScript",
+      link: "#",
+      icon: <Smartphone className="w-6 h-6 text-pink-400" />,
+      type: "private",
+      category: "Mobile",
     },
   ]
 
@@ -175,8 +173,8 @@ export default function Projects() {
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
-          title="Projects"
-          subtitle="Explore my portfolio of web applications, AI solutions, and development tools"
+          title="Proyectos"
+          subtitle="Explora mi portafolio de aplicaciones web, soluciones de IA y herramientas de desarrollo"
         />
 
         {/* Category filters */}
@@ -194,7 +192,7 @@ export default function Projects() {
             }`}
           >
             <Sparkles className="w-4 h-4" />
-            <span>All Projects</span>
+            <span>Todos los Proyectos</span>
           </button>
 
           {categories.map((category) => (
@@ -228,12 +226,12 @@ export default function Projects() {
               >
                 <Card3D>
                   {/* Card with 3D effect */}
-                  <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-indigo-500/20 h-full flex flex-col overflow-hidden">
+                  <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl border border-indigo-500/20 h-full flex flex-col overflow-hidden relative">
                     {/* Featured badge */}
                     {project.featured && (
-                      <div className="absolute top-4 right-4 px-2 py-1 bg-indigo-500/20 backdrop-blur-sm rounded-full text-xs text-indigo-300 flex items-center gap-1 border border-indigo-500/30">
+                      <div className="absolute top-4 right-4 px-2 py-1 bg-indigo-500/20 backdrop-blur-sm rounded-full text-xs text-indigo-300 flex items-center gap-1 border border-indigo-500/30 z-10">
                         <Sparkles className="w-3 h-3" />
-                        <span>Featured</span>
+                        <span>Destacado</span>
                       </div>
                     )}
 
@@ -249,24 +247,9 @@ export default function Projects() {
                       <p className="text-slate-300 mb-4">{project.description}</p>
                       <p className="text-sm text-slate-400 mb-6 mt-auto font-mono">{project.techStack}</p>
 
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition-all duration-300"
-                      >
-                        {project.type === "github" ? (
-                          <>
-                            <Github className="w-4 h-4" />
-                            View on GitHub
-                          </>
-                        ) : (
-                          <>
-                            <ExternalLink className="w-4 h-4" />
-                            Live Demo
-                          </>
-                        )}
-                      </a>
+                      <div className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-slate-600 text-slate-300 cursor-not-allowed">
+                        <span>Proyecto Privado</span>
+                      </div>
                     </div>
                   </div>
                 </Card3D>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, PencilRuler, FileText, Layers, Cloud, Network, Code2 } from "lucide-react"
+import { Code, Database, Server, PencilRuler, Layers, Cloud, Network, Code2 } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 // Animated background component
@@ -113,66 +113,59 @@ export default function Skills() {
   const skills = [
     {
       icon: Code,
-      title: "Front-End Development",
-      technologies: "HTML, CSS, JavaScript, React.js",
-      description: "Building modern, responsive user interfaces with React.js and core front-end technologies.",
+      title: "Frontend Development",
+      technologies: "React, Next.js, JavaScript, TypeScript",
+      description: "Desarrollo de interfaces modernas y responsivas con React y tecnologías frontend avanzadas.",
       color: "blue",
     },
     {
       icon: Server,
-      title: "Back-End Development",
-      technologies: "Python, Java, C, C++",
-      description: "Developing scalable back-end solutions with multiple programming languages.",
+      title: "Backend Development",
+      technologies: "Nest.js, Express.js",
+      description: "Desarrollo de APIs robustas y sistemas backend escalables para aplicaciones empresariales.",
       color: "green",
     },
     {
-      icon: Layers,
-      title: "Frameworks & Stacks",
-      technologies: "MERN, Django, Spring Boot",
-      description: "Expertise in full-stack development using modern frameworks for web applications.",
+      icon: Database,
+      title: "Bases de Datos",
+      technologies: "Supabase, PostgreSQL, MongoDB",
+      description: "Diseño y gestión eficiente de bases de datos para manejo óptimo de información empresarial.",
       color: "violet",
     },
     {
-      icon: Database,
-      title: "Databases",
-      technologies: "MongoDB, MySQL",
-      description: "Efficient database design and management for optimal data handling.",
+      icon: Network,
+      title: "Automatización & AI",
+      technologies: "LangChain, LangGraph, n8n, RAG",
+      description: "Implementación de soluciones de IA y automatización para optimizar procesos empresariales.",
       color: "red",
     },
     {
-      icon: Network,
-      title: "RESTful API Development",
-      technologies: "REST API, JSON, Fetch, Axios",
-      description: "Designing and implementing secure and efficient APIs for seamless data communication.",
+      icon: Cloud,
+      title: "Sistemas Internos",
+      technologies: "Workflows, Integraciones, APIs",
+      description: "Desarrollo de sistemas internos personalizados para gestión empresarial y automatización.",
       color: "teal",
     },
     {
-      icon: Code2,
-      title: "Data Interchange",
-      technologies: "JSON, XML",
-      description: "Working with structured data formats for APIs, databases, and software applications.",
+      icon: PencilRuler,
+      title: "Negocios & Finanzas",
+      technologies: "Contabilidad, Gestión, Análisis",
+      description: "Conocimientos en contabilidad y finanzas aplicados al desarrollo de soluciones tecnológicas.",
       color: "cyan",
     },
     {
-      icon: Cloud,
-      title: "Salesforce Administration",
-      technologies: "Salesforce CRM",
-      description: "Managing Salesforce applications, workflows, and automation for business processes.",
+      icon: Layers,
+      title: "Otros Conocimientos",
+      technologies: "React Native, Tailwind CSS",
+      description: "Desarrollo multiplataforma y diseño de interfaces con frameworks modernos.",
       color: "indigo",
     },
     {
-      icon: PencilRuler,
-      title: "Design Tools",
-      technologies: "Canva",
-      description: "Creating visually appealing designs for presentations, social media, and branding.",
+      icon: Code2,
+      title: "Reparación Hardware",
+      technologies: "Diagnóstico, Mantenimiento, Soporte",
+      description: "Experiencia en reparación y mantenimiento de equipos informáticos y soporte técnico.",
       color: "orange",
-    },
-    {
-      icon: FileText,
-      title: "Microsoft Office",
-      technologies: "Word, Excel, PowerPoint, Outlook",
-      description: "Proficient in document creation, data analysis, presentations, and email management.",
-      color: "blue",
     },
   ]
 
@@ -181,7 +174,7 @@ export default function Skills() {
       <AnimatedBackground />
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Technical Skills" />
+        <SectionHeading title="Habilidades Técnicas" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (

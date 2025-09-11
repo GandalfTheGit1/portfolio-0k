@@ -1,6 +1,6 @@
 "use client"
 
-import { GraduationCap, Calendar, Award, BookOpen } from "lucide-react"
+import { Calendar, BookOpen } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import { motion } from "framer-motion"
 
@@ -47,25 +47,18 @@ const EducationCard = ({
 export default function Education() {
   const education = [
     {
-      degree: "B.Tech in Artificial Intelligence & Machine Learning",
-      institution: "Malla Reddy University",
-      period: "2023 – 2027 (Pursuing)",
-      additional: "CGPA: 8.93",
+      degree: "Contabilidad y Finanzas",
+      institution: "Universidad de La Habana",
+      period: "2021 – 2025",
+      additional: "Formación en principios contables, análisis financiero y gestión empresarial",
       icon: BookOpen,
     },
     {
-      degree: "Intermediate (12th Grade)",
-      institution: "Geetanjali Jr. College",
-      period: "2021 – 2023",
-      additional: "Percentage: 86%",
-      icon: Award,
-    },
-    {
-      degree: "10th Grade",
-      institution: "Kendriya Vidyalaya",
-      period: "2011 – 2021",
-      additional: "Percentage: 76%",
-      icon: GraduationCap,
+      degree: "Ciencias Informáticas",
+      institution: "Universidad de Ciencias Informáticas",
+      period: "2020 – 2021",
+      additional: "Fundamentos de programación y desarrollo de software",
+      icon: BookOpen,
     },
   ]
 
@@ -75,7 +68,7 @@ export default function Education() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Education" />
+        <SectionHeading title="Educación" />
 
         <div className="max-w-4xl mx-auto space-y-6 mt-12">
           {education.map((edu, index) => (
