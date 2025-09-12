@@ -3,6 +3,12 @@
 import { motion } from "framer-motion"
 import { Globe } from "lucide-react"
 import SectionHeading from "./SectionHeading"
+import { useI18n } from "@/app/components/I18nProvider"
+
+type TranslationFunction = {
+  (key: string): string;
+  <T = any>(key: string, options: { returnObjects: true }): T;
+}
 
 // Language proficiency component
 const LanguageProficiency = ({
@@ -44,15 +50,17 @@ const LanguageProficiency = ({
 }
 
 export default function Languages() {
+  const { t } = useI18n() as { t: TranslationFunction };
+  
   const languages = [
     {
-      name: "Español",
-      proficiency: "Lengua Nativa",
+      name: t('languages.spanish.name'),
+      proficiency: t('languages.spanish.proficiency'),
       level: 5,
     },
     {
-      name: "Inglés",
-      proficiency: "Competencia Profesional",
+      name: t('languages.english.name'),
+      proficiency: t('languages.english.proficiency'),
       level: 4,
     },
   ]
@@ -63,7 +71,7 @@ export default function Languages() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Idiomas" />
+        <SectionHeading title={t('languages.sectionTitle')} />
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {languages.map((lang, index) => (

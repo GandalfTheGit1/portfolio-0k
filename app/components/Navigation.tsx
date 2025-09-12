@@ -17,24 +17,26 @@ import {
   Award,
 } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
+import { useI18n } from "@/app/components/I18nProvider"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [scrollY, setScrollY] = useState(0)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const { t, locale, toggleLocale } = useI18n()
 
   const navItems = [
-    { id: "hero", label: "Home", icon: <Home className="w-5 h-5" /> },
-    { id: "about", label: "About", icon: <User className="w-5 h-5" /> },
-    { id: "experience", label: "Experience", icon: <Briefcase className="w-5 h-5" /> },
-    { id: "skills", label: "Skills", icon: <Code className="w-5 h-5" /> },
-    { id: "education", label: "Education", icon: <GraduationCap className="w-5 h-5" /> },
-    { id: "research", label: "Research", icon: <BookOpen className="w-5 h-5" /> },
-    { id: "certifications", label: "Certifications", icon: <Award className="w-5 h-5" /> },
-    { id: "projects", label: "Projects", icon: <Cpu className="w-5 h-5" /> },
-    { id: "languages", label: "Languages", icon: <Code className="w-5 h-5 rotate-90" /> },
-    { id: "contact", label: "Contact", icon: <MessageSquare className="w-5 h-5" /> },
+    { id: "hero", label: t("nav.home"), icon: <Home className="w-5 h-5" /> },
+    { id: "about", label: t("nav.about"), icon: <User className="w-5 h-5" /> },
+    { id: "experience", label: t("nav.experience"), icon: <Briefcase className="w-5 h-5" /> },
+    // { id: "skills", label: t("nav.skills"), icon: <Code className="w-5 h-5" /> },
+    { id: "education", label: t("nav.education"), icon: <GraduationCap className="w-5 h-5" /> },
+    // { id: "research", label: t("nav.research"), icon: <BookOpen className="w-5 h-5" /> },
+    // { id: "certifications", label: t("nav.certifications"), icon: <Award className="w-5 h-5" /> },
+    { id: "projects", label: t("nav.projects"), icon: <Cpu className="w-5 h-5" /> },
+    { id: "languages", label: t("nav.languages"), icon: <Code className="w-5 h-5 rotate-90" /> },
+    { id: "contact", label: t("nav.contact"), icon: <MessageSquare className="w-5 h-5" /> },
   ]
 
   useEffect(() => {
@@ -98,7 +100,7 @@ export default function Navigation() {
             transition={{ delay: 0.2 }}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400">
-              The Baskerville Blueprint
+              {t("site.title")}
             </span>
           </motion.div>
 
@@ -123,15 +125,27 @@ export default function Navigation() {
             </ul>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
-          <motion.button
-            className="lg:hidden bg-slate-800/80 backdrop-blur-md p-3 rounded-full shadow-lg"
-            onClick={() => setIsOpen(!isOpen)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </motion.button>
+          {/* Language Toggle + Mobile Navigation Toggle */}
+          <div className="flex items-center gap-3">
+            <motion.button
+              className="hidden lg:inline-flex bg-slate-800/80 backdrop-blur-md px-3 py-2 rounded-full text-sm text-slate-200 hover:text-white hover:bg-slate-700/70"
+              onClick={toggleLocale}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle language"
+            >
+              {locale === "en" ? "ES" : "EN"}
+            </motion.button>
+            {/* Mobile Navigation Toggle */}
+            <motion.button
+              className="lg:hidden bg-slate-800/80 backdrop-blur-md p-3 rounded-full shadow-lg"
+              onClick={() => setIsOpen(!isOpen)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </motion.button>
+          </div>
         </div>
       </motion.header>
 
@@ -151,6 +165,17 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
+              {/* Mobile language toggle */}
+              <motion.li initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
+                <button
+                  onClick={() => {
+                    toggleLocale()
+                  }}
+                  className="text-xl font-medium px-4 py-2 rounded-full bg-slate-800/80 text-slate-200 hover:text-white hover:bg-slate-700/70"
+                >
+                  {locale === "en" ? "ES" : "EN"}
+                </button>
+              </motion.li>
               {navItems.map((item, index) => (
                 <motion.li
                   key={item.id}

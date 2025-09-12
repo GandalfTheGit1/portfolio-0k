@@ -1,0 +1,240 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "projects": "Proyectos",
+    "languages": "Idiomas",
+    "contact": "Contacto"
+  },
+  "site": {
+    "title": "The Baskerville Blueprint"
+  },
+  "hero": {
+    "greeting": "¡Hola, Mundo!",
+    "nameTyping": "Soy William Marrero",
+    "badges": {
+      "fullstack": "Desarrollador Fullstack",
+      "automation": "Automatización",
+      "internalSystems": "Sistemas Internos"
+    },
+    "blurb": "Desarrollador Fullstack especializado en sistemas internos y automatización de procesos empresariales. Experiencia en React, Next.js, Nest.js, Supabase, LangChain y n8n para crear soluciones innovadoras que optimizan operaciones.",
+    "buttons": {
+      "downloadCV": "Descargar CV",
+      "exploreWork": "Explorar Mi Trabajo"
+    },
+    "aria": {
+      "linkedin": "Perfil de LinkedIn",
+      "email": "Contacto por Correo",
+      "github": "Perfil de GitHub",
+      "portfolio": "Sitio Web del Portafolio"
+    }
+  },
+  "about": {
+    "sectionTitle": "Sobre Mí",
+    "roleHeading": "Desarrollador Fullstack & Especialista en Automatización",
+    "p1": "Desarrollador Fullstack con experiencia en sistemas internos, automatización de procesos empresariales y reparación de equipos informáticos. Especializado en React, Next.js, Nest.js, Supabase y tecnologías de IA.",
+    "p2": "Formación en Contabilidad y Finanzas con fuerte orientación a soluciones tecnológicas para negocios. Más de 8 proyectos desarrollados para gestión empresarial en áreas de envíos, exportaciones y retail.",
+    "skills": {
+      "frontend": { "title": "Frontend", "desc": "React, Next.js, Tailwind CSS, JavaScript" },
+      "backend": { "title": "Backend", "desc": "Nest.js, Node.js, APIs REST" },
+      "db": { "title": "Base de Datos", "desc": "Supabase, PostgreSQL, MongoDB" },
+      "ai": { "title": "IA/Automatización", "desc": "LangChain, LangGraph, n8n, RAG" },
+      "business": { "title": "Negocios", "desc": "Contabilidad, Finanzas, Gestión" },
+      "other": { "title": "Otros", "desc": "React Native, Reparación Hardware" }
+    }
+  },
+  "experience": {
+    "sectionTitle": "Experiencia",
+    "freelance": {
+      "role": "Desarrollador Fullstack Freelance",
+      "company": "Proyectos Independientes",
+      "projects": [
+        {
+          "title": "🚀 Sistemas de Automatización Empresarial",
+          "description": "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados."
+        },
+        {
+          "title": "💼 Soluciones de Gestión Interna",
+          "description": "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros."
+        },
+        {
+          "title": "🤖 Integración de IA y LangChain",
+          "description": "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales."
+        }
+      ]
+    },
+    "hardwareSpecialist": {
+      "role": "Especialista en Reparación de Hardware",
+      "company": "Servicios Técnicos Independientes",
+      "projects": [
+        {
+          "title": "🔨 Diagnóstico y Reparación de Equipos",
+          "description": "Diagnóstico, reparación y mantenimiento de computadoras, laptops y equipos informáticos. Resolución de problemas de hardware y software para clientes particulares y pequeñas empresas."
+        },
+        {
+          "title": "💻 Soporte Técnico Integral",
+          "description": "Prestación de servicios de soporte técnico, instalación de sistemas operativos, configuración de redes y asesoramiento en compra de equipos informáticos."
+        }
+      ]
+    },
+    "education": {
+      "role": "Estudiante de Contabilidad y Finanzas",
+      "company": "Formación Académica",
+      "projects": [
+        {
+          "title": "📊 Fundamentos Empresariales",
+          "description": "Formación sólida en principios contables, análisis financiero y gestión empresarial. Base teórica que complementa el desarrollo de soluciones tecnológicas para negocios."
+        },
+        {
+          "title": "💡 Visión Integral de Negocios",
+          "description": "Desarrollo de comprensión profunda de procesos empresariales, lo que permite crear soluciones tecnológicas más efectivas y alineadas con objetivos comerciales."
+        }
+      ]
+    },
+    "periods": {
+      "freelance": "2021 - Presente",
+      "hardwareSpecialist": "2020 - 2021",
+      "education": "2021 - 2025"
+    },
+    "labels": {
+      "leadership": "Liderazgo"
+    }
+  },
+  "education": {
+    "sectionTitle": "Educación",
+    "degrees": [
+      {
+        "degree": "Contabilidad y Finanzas",
+        "institution": "Universidad de La Habana",
+        "period": "2021 – 2025",
+        "additional": "Formación en principios contables, análisis financiero y gestión empresarial"
+      },
+      {
+        "degree": "Ciencias Informáticas",
+        "institution": "Universidad de Ciencias Informáticas",
+        "period": "2020 – 2021",
+        "additional": "Fundamentos de programación y desarrollo de software"
+      }
+    ]
+  },
+  "languages": {
+    "sectionTitle": "Idiomas",
+    "spanish": {
+      "name": "Español",
+      "proficiency": "Lengua Nativa"
+    },
+    "english": {
+      "name": "Inglés",
+      "proficiency": "Competencia Profesional"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Conectemos",
+    "email": {
+      "title": "Correo",
+      "connect": "Envíame un mensaje"
+    },
+    "phone": {
+      "title": "Teléfono",
+      "connect": "Llamar"
+    },
+    "location": {
+      "title": "Ubicación",
+      "connect": "Ver en el mapa"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Explora mi portafolio de aplicaciones web, soluciones de IA y herramientas de desarrollo",
+    "allProjects": "Todos los Proyectos",
+    "viewDemo": "Ver Demo",
+    "viewCode": "Ver Código",
+    "privateProject": "Proyecto Privado",
+    "categories": {
+      "web": "Aplicaciones Web",
+      "ai": "IA y Automatización",
+      "ecommerce": "Comercio Electrónico",
+      "mobile": "Móvil"
+    },
+    "items": [
+      {
+        "title": "TRG - Sistema de Gestión de Envíos",
+        "description": "Sistema completo para gestión de envíos de contenedores desde EE.UU. hacia Cuba con automatización de procesos desde despacho hasta distribución final.",
+        "techStack": "Next.js, Material UI, PostgreSQL",
+        "type": "private",
+        "category": "Web",
+        "featured": true
+      },
+      {
+        "title": "Routule Print (Elstar)",
+        "description": "Plataforma para crear marketplaces e integración vertical de toda la cadena de valor. Facilita a tiendas minoristas crear su sistema sin programadores.",
+        "techStack": "Next.js, Tailwind CSS, Supabase",
+        "github": "https://github.com/username/routule-print",
+        "demo": "https://routule-print-demo.vercel.app",
+        "type": "public",
+        "category": "E-commerce",
+        "featured": true
+      },
+      {
+        "title": "Comercio Electrónico Mily Travel",
+        "description": "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
+        "techStack": "React, Tailwind CSS, Nest.js",
+        "github": "https://github.com/username/mily-travel",
+        "demo": "https://mily-travel.vercel.app",
+        "type": "public",
+        "category": "E-commerce"
+      },
+      {
+        "title": "Maranatha - Sistema de Gestión",
+        "description": "Sistema integral de gestión de ventas, mensajería e inventario para tienda de regalos y misceláneas con integración de pagos.",
+        "techStack": "Next.js, Tailwind CSS, Supabase",
+        "type": "private",
+        "category": "Web"
+      },
+      {
+        "title": "Perxins - Eventos La Habana",
+        "description": "Aplicación web para visualizar eventos en La Habana: cines, teatros, fiestas, conciertos y actividades de entretenimiento. PWA con despliegue en AWS.",
+        "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
+        "github": "https://github.com/username/perxins",
+        "demo": "https://perxins.vercel.app",
+        "type": "public",
+        "category": "Web"
+      },
+      {
+        "title": "SOS Combo - E-commerce",
+        "description": "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
+        "techStack": "React, JavaScript, CSS, HTML",
+        "type": "private",
+        "category": "E-commerce"
+      },
+      {
+        "title": "AI Bot con RAG",
+        "description": "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
+        "techStack": "LangChain, LangGraph, n8n",
+        "github": "https://github.com/username/ai-bot-rag",
+        "demo": "https://ai-bot-rag.vercel.app",
+        "type": "public",
+        "category": "AI",
+        "featured": true
+      },
+      {
+        "title": "Poinger - Mejoras Web",
+        "description": "Mejoras en página web empresarial para catálogo de productos con resolución de errores y optimización del sitio.",
+        "techStack": "PHP, MySQL",
+        "github": "https://github.com/username/poinger",
+        "type": "public",
+        "category": "Web"
+      },
+      {
+        "title": "Proyecto React Native",
+        "description": "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
+        "techStack": "React Native, TypeScript",
+        "link": "#",
+        "type": "private",
+        "category": "Mobile"
+      }
+    ]
+  }
+}

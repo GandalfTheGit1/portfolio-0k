@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google"
 import type React from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from "@/app/components/Navigation"
+import { I18nProvider } from "@/app/components/I18nProvider"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" })
@@ -38,10 +39,13 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-950 text-white`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <Navigation />
-          {children}
+          <I18nProvider>
+            <Navigation />
+            {children}
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>
   )
 }
+

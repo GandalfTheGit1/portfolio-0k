@@ -3,6 +3,12 @@
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone, ExternalLink } from "lucide-react"
 import SectionHeading from "./SectionHeading"
+import { useI18n } from "@/app/components/I18nProvider"
+
+type TranslationFunction = {
+  (key: string): string;
+  <T = any>(key: string, options: { returnObjects: true }): T;
+}
 
 // Contact card component
 const ContactCard = ({
@@ -12,6 +18,7 @@ const ContactCard = ({
   link,
   delay,
   color = "indigo",
+  connectText = "Connect"
 }: {
   icon: any
   title: string
@@ -19,6 +26,7 @@ const ContactCard = ({
   link: string
   delay: number
   color?: string
+  connectText?: string
 }) => {
   const colors = {
     indigo: "from-indigo-500/20 to-indigo-500/5 border-indigo-500/30 hover:border-indigo-500/50",
@@ -43,7 +51,7 @@ const ContactCard = ({
       <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
       <p className="text-slate-300 mb-4">{content}</p>
       <div className="flex items-center text-indigo-400 text-sm">
-        <span>Connect</span>
+        <span>{connectText}</span>
         <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
     </motion.a>
@@ -51,34 +59,46 @@ const ContactCard = ({
 }
 
 export default function Contact() {
+  const { t } = useI18n() as { t: TranslationFunction };
+  
   return (
     <section id="contact" className="py-20 relative overflow-hidden bg-slate-950">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Conectemos" />
+        <SectionHeading title={t('contact.sectionTitle')} />
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           <ContactCard
             icon={Mail}
-            title="Email"
+            title={t('contact.email.title')}
             content="marrerow613@gmail.com"
             link="mailto:marrerow613@gmail.com"
             delay={0.1}
             color="indigo"
+            connectText={t('contact.email.connect')}
           />
 
           <ContactCard
             icon={Phone}
-            title="Teléfono"
+            title={t('contact.phone.title')}
             content="+53 5 841 91 39"
             link="tel:+5358419139"
             delay={0.2}
             color="blue"
+            connectText={t('contact.phone.connect')}
           />
 
-          <ContactCard icon={MapPin} title="Ubicación" content="La Habana, Cuba" link="#" delay={0.3} color="purple" />
+          <ContactCard 
+            icon={MapPin} 
+            title={t('contact.location.title')} 
+            content="La Habana, Cuba" 
+            link="#" 
+            delay={0.3} 
+            color="purple"
+            connectText={t('contact.location.connect')}
+          />
         </div>
       </div>
     </section>

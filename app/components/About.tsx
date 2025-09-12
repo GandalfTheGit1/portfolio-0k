@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Code, Database, Server, Brain, Clipboard, Settings } from "lucide-react"
 import SectionHeading from "./SectionHeading"
+import { useI18n } from "@/app/components/I18nProvider"
 
 // Particle animation component
 const ParticleField = () => {
@@ -44,36 +45,37 @@ const ParticleField = () => {
 }
 
 export default function About() {
+  const { t } = useI18n()
   const skills = [
     {
       icon: <Code className="w-8 h-8 text-indigo-400" />,
-      title: "Frontend",
-      description: "React, Next.js, Tailwind CSS, JavaScript",
+      title: t("about.skills.frontend.title"),
+      description: t("about.skills.frontend.desc"),
     },
     {
       icon: <Server className="w-8 h-8 text-blue-400" />,
-      title: "Backend",
-      description: "Nest.js, Node.js, APIs REST",
+      title: t("about.skills.backend.title"),
+      description: t("about.skills.backend.desc"),
     },
     {
       icon: <Database className="w-8 h-8 text-violet-400" />,
-      title: "Base de Datos",
-      description: "Supabase, PostgreSQL, MongoDB",
+      title: t("about.skills.db.title"),
+      description: t("about.skills.db.desc"),
     },
     {
       icon: <Brain className="w-8 h-8 text-fuchsia-400" />,
-      title: "AI/Automatización",
-      description: "LangChain, LangGraph, n8n, RAG",
+      title: t("about.skills.ai.title"),
+      description: t("about.skills.ai.desc"),
     },
     {
       icon: <Clipboard className="w-8 h-8 text-sky-400" />,
-      title: "Negocios",
-      description: "Contabilidad, Finanzas, Gestión",
+      title: t("about.skills.business.title"),
+      description: t("about.skills.business.desc"),
     },
     {
       icon: <Settings className="w-8 h-8 text-teal-400" />,
-      title: "Otros",
-      description: "React Native, Reparación Hardware",
+      title: t("about.skills.other.title"),
+      description: t("about.skills.other.desc"),
     },
   ]
 
@@ -84,7 +86,7 @@ export default function About() {
       <ParticleField />
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Sobre Mí" />
+        <SectionHeading title={t("about.sectionTitle")} />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div
@@ -100,18 +102,15 @@ export default function About() {
                   <Brain className="w-6 h-6 text-indigo-400" />
                 </div>
                 <h3 className="text-2xl font-bold text-white font-display">
-                  Desarrollador Fullstack & Especialista en Automatización
+                  {t("about.roleHeading")}
                 </h3>
               </div>
 
               <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                Desarrollador Fullstack con experiencia en sistemas internos, automatización de procesos empresariales y
-                reparación de equipos informáticos. Especializado en React, Next.js, Nest.js, Supabase y tecnologías de
-                IA.
+                {t("about.p1")}
               </p>
               <p className="text-xl text-slate-300 leading-relaxed">
-                Formación en Contabilidad y Finanzas con fuerte orientación a soluciones tecnológicas para negocios. Más
-                de 8 proyectos desarrollados para gestión empresarial en áreas de envíos, exportaciones y retail.
+                {t("about.p2")}
               </p>
             </div>
           </motion.div>

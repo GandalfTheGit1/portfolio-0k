@@ -3,6 +3,12 @@
 import { Calendar, BookOpen } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import { motion } from "framer-motion"
+import { useI18n } from "@/app/components/I18nProvider"
+
+type TranslationFunction = {
+  (key: string): string;
+  <T = any>(key: string, options: { returnObjects: true }): T;
+}
 
 // Education card component
 const EducationCard = ({
@@ -44,23 +50,40 @@ const EducationCard = ({
   )
 }
 
+interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  additional: string;
+  icon?: any; // Make icon optional since it's not in the translation
+}
+
+// Add icon mapping since we don't store icons in translations
+const iconMap: { [key: string]: any } = {
+  'Contabilidad y Finanzas': BookOpen,
+  'Accounting and Finance': BookOpen,
+  'Ciencias Informáticas': BookOpen,
+  'Computer Science': BookOpen
+};
+
 export default function Education() {
-  const education = [
-    {
-      degree: "Contabilidad y Finanzas",
-      institution: "Universidad de La Habana",
-      period: "2021 – 2025",
-      additional: "Formación en principios contables, análisis financiero y gestión empresarial",
-      icon: BookOpen,
-    },
-    {
-      degree: "Ciencias Informáticas",
-      institution: "Universidad de Ciencias Informáticas",
-      period: "2020 – 2021",
-      additional: "Fundamentos de programación y desarrollo de software",
-      icon: BookOpen,
-    },
-  ]
+  const { t } = useI18n() as { t: TranslationFunction };
+  
+  // Get education data from translations with proper typing
+  const degreesData = t<Array<{
+    degree: string;
+    institution: string;
+    period: string;
+    additional: string;
+  }>>('education.degrees', { returnObjects: true });
+  
+  // Ensure degrees is always an array and add icons
+  const education: EducationItem[] = Array.isArray(degreesData) 
+    ? degreesData.map(edu => ({
+        ...edu,
+        icon: iconMap[edu.degree] || BookOpen
+      }))
+    : [];
 
   return (
     <section id="education" className="py-20 relative overflow-hidden bg-slate-950">
@@ -68,7 +91,7 @@ export default function Education() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Educación" />
+        <SectionHeading title={t('education.sectionTitle')} />
 
         <div className="max-w-4xl mx-auto space-y-6 mt-12">
           {education.map((edu, index) => (

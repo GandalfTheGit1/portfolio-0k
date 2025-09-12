@@ -4,8 +4,14 @@ import type React from "react"
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
-import { Cpu, Globe, ShoppingCart, Package, Store, Bot, Sparkles, Smartphone } from "lucide-react"
+import { Cpu, Globe, ShoppingCart, Package, Bot, Sparkles, Smartphone } from "lucide-react"
 import SectionHeading from "./SectionHeading"
+import { useI18n } from "@/app/components/I18nProvider"
+
+type TranslationFunction = {
+  (key: string): string;
+  <T = any>(key: string, options: { returnObjects: true }): T;
+}
 
 // 3D Card effect component
 const Card3D = ({ children }: { children: React.ReactNode }) => {
@@ -46,113 +52,61 @@ const Card3D = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
+interface Project {
+  title: string;
+  description: string;
+  techStack: string;
+  github?: string;
+  demo?: string;
+  icon: React.ReactNode;
+  type: 'public' | 'private';
+  category: string;
+  featured?: boolean;
+}
+
 export default function Projects() {
+  const { t } = useI18n() as { t: TranslationFunction };
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
 
+  // Get categories from translations
   const categories = [
-    { id: "Web", label: "Aplicaciones Web", icon: <Globe className="w-4 h-4" /> },
-    { id: "AI", label: "IA y Automatización", icon: <Cpu className="w-4 h-4" /> },
-    { id: "E-commerce", label: "Comercio Electrónico", icon: <ShoppingCart className="w-4 h-4" /> },
-    { id: "Mobile", label: "Móvil", icon: <Smartphone className="w-4 h-4" /> },
+    { id: "Web", label: t('projects.categories.web'), icon: <Globe className="w-4 h-4" /> },
+    { id: "AI", label: t('projects.categories.ai'), icon: <Cpu className="w-4 h-4" /> },
+    { id: "E-commerce", label: t('projects.categories.ecommerce'), icon: <ShoppingCart className="w-4 h-4" /> },
+    { id: "Mobile", label: t('projects.categories.mobile'), icon: <Smartphone className="w-4 h-4" /> },
   ]
 
-  const projects = [
-    {
-      title: "TRG - Sistema de Gestión de Envíos",
-      description:
-        "Sistema completo para gestión de envíos de contenedores desde EE.UU. hacia Cuba con automatización de procesos desde despacho hasta distribución final.",
-      techStack: "Next.js, Material UI, PostgreSQL",
-      link: "https://github.com/GandalfTheGit1/Cauto_StoreAdmin.git",
-      icon: <Package className="w-6 h-6 text-blue-400" />,
-      type: "github",
-      category: "Web",
-      featured: true,
-    },
-    {
-      title: "Routule Print (Elstar)",
-      description:
-        "Plataforma para crear marketplaces e integración vertical de toda la cadena de valor. Facilita a tiendas minoristas crear su sistema sin programadores.",
-      techStack: "Next.js, Tailwind CSS, Supabase",
-      link: "#",
-      icon: <Store className="w-6 h-6 text-indigo-400" />,
-      type: "private",
-      category: "E-commerce",
-      featured: true,
-    },
-    {
-      title: "Comercio Electrónico Mily Travel",
-      description:
-        "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
-      techStack: "React, Tailwind CSS, Nest.js",
-      link: "https://github.com/GandalfTheGit1/milyTravelFront2.git",
-      icon: <ShoppingCart className="w-6 h-6 text-teal-400" />,
-      type: "github",
-      category: "E-commerce",
-    },
-    {
-      title: "Maranatha - Sistema de Gestión",
-      description:
-        "Sistema integral de gestión de ventas, mensajería e inventario para tienda de regalos y misceláneas con integración de pagos.",
-      techStack: "Next.js, Tailwind CSS, Supabase",
-      link: "#",
-      icon: <Store className="w-6 h-6 text-green-400" />,
-      type: "private",
-      category: "Web",
-    },
-    {
-      title: "Perxins - Eventos La Habana",
-      description:
-        "Aplicación web para visualizar eventos en La Habana: cines, teatros, fiestas, conciertos y actividades de entretenimiento. PWA con despliegue en AWS.",
-      techStack: "React, Nest.js, MongoDB, PWA, AWS EC2",
-      link: "https://github.com/GandalfTheGit1/PerxinsFront.git",
-      icon: <Globe className="w-6 h-6 text-violet-400" />,
-      type: "github",
-      category: "Web",
-    },
-    {
-      title: "SOS Combo - E-commerce",
-      description:
-        "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
-      techStack: "React, JavaScript, CSS, HTML",
-      link: "https://sos-combos.vercel.app/",
-      icon: <ShoppingCart className="w-6 h-6 text-orange-400" />,
-      type: "demo",
-      category: "E-commerce",
-    },
-    {
-      title: "AI Bot con RAG",
-      description:
-        "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
-      techStack: "LangChain, LangGraph, n8n",
-      link: "https://github.com/GandalfTheGit1/accounting-chatbot.git",
-      icon: <Bot className="w-6 h-6 text-cyan-400" />,
-      type: "github",
-      category: "AI",
-      featured: true,
-    },
-    {
-      title: "Poinger - Mejoras Web",
-      description:
-        "Mejoras en página web empresarial para catálogo de productos con resolución de errores y optimización del sitio.",
-      techStack: "PHP, MySQL",
-      link: "#",
-      icon: <Globe className="w-6 h-6 text-yellow-400" />,
-      type: "private",
-      category: "Web",
-    },
-    {
-      title: "Proyecto React Native",
-      description:
-        "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
-      techStack: "React Native, TypeScript",
-      link: "#",
-      icon: <Smartphone className="w-6 h-6 text-pink-400" />,
-      type: "private",
-      category: "Mobile",
-    },
-  ]
+  // Get projects from translations with proper typing
+  const projectsData = t<Array<Omit<Project, 'icon'>>>("projects.items", { returnObjects: true });
 
-  const filteredProjects = activeCategory ? projects.filter((project) => project.category === activeCategory) : projects
+  // Ensure projects is an array and add icons
+  const projects = Array.isArray(projectsData)
+    ? projectsData.map((project) => ({
+        ...project,
+        icon: getProjectIcon(project.category, project.title),
+      }))
+    : [];
+
+  function getProjectIcon(category: string, title: string) {
+    switch (category) {
+      case "Web":
+        return <Globe className="w-6 h-6 text-blue-400" />
+      case "AI":
+        return <Bot className="w-6 h-6 text-cyan-400" />
+      case "E-commerce":
+        return title.includes("Mily")
+          ? <ShoppingCart className="w-6 h-6 text-teal-400" />
+          : <ShoppingCart className="w-6 h-6 text-orange-400" />
+      case "Mobile":
+        return <Smartphone className="w-6 h-6 text-pink-400" />
+      default:
+        return <Package className="w-6 h-6 text-blue-400" />
+    }
+  }
+
+  const filteredProjects = activeCategory 
+    ? projects.filter((project) => project.category === activeCategory) 
+    : projects;
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden bg-slate-950">
@@ -173,8 +127,8 @@ export default function Projects() {
 
       <div className="container mx-auto px-6 relative z-10">
         <SectionHeading
-          title="Proyectos"
-          subtitle="Explora mi portafolio de aplicaciones web, soluciones de IA y herramientas de desarrollo"
+          title={t('projects.title')}
+          subtitle={t('projects.subtitle')}
         />
 
         {/* Category filters */}
@@ -192,7 +146,7 @@ export default function Projects() {
             }`}
           >
             <Sparkles className="w-4 h-4" />
-            <span>Todos los Proyectos</span>
+            <span>{t('projects.allProjects')}</span>
           </button>
 
           {categories.map((category) => (
@@ -245,31 +199,38 @@ export default function Projects() {
                       </div>
 
                       <p className="text-slate-300 mb-4">{project.description}</p>
-                      <p className="text-sm text-slate-400 mb-6 mt-auto font-mono">{project.techStack}</p>
-
-                      {project.type === "github" ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors duration-300"
-                        >
-                          <span>Ver en GitHub</span>
-                        </a>
-                      ) : project.type === "demo" ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white transition-colors duration-300"
-                        >
-                          <span>Ver Demo</span>
-                        </a>
-                      ) : (
-                        <div className="inline-flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-slate-600 text-slate-300 cursor-not-allowed">
-                          <span>Proyecto Privado</span>
+                      <div className="mt-auto pt-4 border-t border-slate-800">
+                        <p className="text-sm text-slate-400 mb-3">{project.techStack}</p>
+                        <div className="flex gap-3">
+                          {project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center px-3 py-1.5 text-sm bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition-colors"
+                            >
+                              {t('projects.viewDemo')}
+                            </a>
+                          )}
+                          {project.github ? (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center px-3 py-1.5 text-sm bg-slate-700 hover:bg-slate-600 text-white rounded-md transition-colors"
+                            >
+                              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                              </svg>
+                              {t('projects.viewCode')}
+                            </a>
+                          ) : (
+                            <span className="inline-flex items-center px-3 py-1.5 text-sm bg-slate-800 text-slate-400 rounded-md cursor-not-allowed">
+                              {t('projects.privateProject')}
+                            </span>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
                 </Card3D>

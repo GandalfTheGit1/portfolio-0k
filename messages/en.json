@@ -1,0 +1,258 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "languages": "Languages",
+    "contact": "Contact"
+  },
+  "site": {
+    "title": "The Baskerville Blueprint"
+  },
+  "hero": {
+    "greeting": "Hello, World!",
+    "nameTyping": "I'm William Marrero",
+    "badges": {
+      "fullstack": "Fullstack Developer",
+      "automation": "Automation",
+      "internalSystems": "Internal Systems"
+    },
+    "blurb": "Fullstack developer specialized in internal systems and business process automation. Experience with React, Next.js, Nest.js, Supabase, LangChain and n8n to build innovative solutions that optimize operations.",
+    "buttons": {
+      "downloadCV": "Download CV",
+      "exploreWork": "Explore My Work"
+    },
+    "aria": {
+      "linkedin": "LinkedIn Profile",
+      "email": "Email Contact",
+      "github": "GitHub Profile",
+      "portfolio": "Portfolio Website"
+    }
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "roleHeading": "Fullstack Developer & Automation Specialist",
+    "p1": "Fullstack developer with experience in internal systems, business process automation and computer hardware repair. Specialized in React, Next.js, Nest.js, Supabase and AI technologies.",
+    "p2": "Background in Accounting and Finance with a strong focus on tech solutions for business. Over 8 projects delivered for business management in shipping, exports and retail.",
+    "skills": {
+      "frontend": { "title": "Frontend", "desc": "React, Next.js, Tailwind CSS, JavaScript" },
+      "backend": { "title": "Backend", "desc": "Nest.js, Node.js, REST APIs" },
+      "db": { "title": "Databases", "desc": "Supabase, PostgreSQL, MongoDB" },
+      "ai": { "title": "AI/Automation", "desc": "LangChain, LangGraph, n8n, RAG" },
+      "business": { "title": "Business", "desc": "Accounting, Finance, Management" },
+      "other": { "title": "Other", "desc": "React Native, Hardware Repair" }
+    }
+  },
+  "experience": {
+    "sectionTitle": "Experience",
+    "freelance": {
+      "role": "Fullstack Developer Freelance",
+      "company": "Independent Projects",
+      "projects": [
+        {
+          "title": "🚀 Business Automation Systems",
+          "description": "Development of over 8 automation projects for shipping, export, and retail companies. Implementation of automated workflows with n8n and custom management systems."
+        },
+        {
+          "title": "💼 Internal Management Solutions",
+          "description": "Creation of internal systems for business process optimization, including inventory management, shipment tracking, and financial reporting automation."
+        },
+        {
+          "title": "🤖 AI and LangChain Integration",
+          "description": "Implementation of AI solutions using LangChain and LangGraph for customer service process automation and business data analysis."
+        }
+      ]
+    },
+    "hardwareSpecialist": {
+      "role": "Hardware Repair Specialist",
+      "company": "Independent Technical Services",
+      "projects": [
+        {
+          "title": "🔨 Equipment Diagnosis and Repair",
+          "description": "Diagnosis, repair, and maintenance of computers, laptops, and IT equipment. Hardware and software troubleshooting for individuals and small businesses."
+        },
+        {
+          "title": "💻 Comprehensive Technical Support",
+          "description": "Provision of technical support services, operating system installation, network configuration, and IT equipment purchasing advice."
+        }
+      ]
+    },
+    "education": {
+      "role": "Accounting and Finance Student",
+      "company": "Academic Education",
+      "projects": [
+        {
+          "title": "📊 Business Fundamentals",
+          "description": "Solid training in accounting principles, financial analysis, and business management. Theoretical foundation that complements the development of technological solutions for businesses."
+        },
+        {
+          "title": "💡 Business Vision",
+          "description": "Development of deep understanding of business processes, enabling the creation of more effective technological solutions aligned with commercial objectives."
+        }
+      ]
+    },
+    "periods": {
+      "freelance": "2021 - Present",
+      "hardwareSpecialist": "2020 - 2021",
+      "education": "2021 - 2025"
+    },
+    "labels": {
+      "leadership": "Leadership"
+    }
+  },
+  "education": {
+    "sectionTitle": "Education",
+    "degrees": [
+      {
+        "degree": "Accounting and Finance",
+        "institution": "University of Havana",
+        "period": "2021 – 2025",
+        "additional": "Training in accounting principles, financial analysis, and business management"
+      },
+      {
+        "degree": "Computer Science",
+        "institution": "University of Computer Sciences",
+        "period": "2020 – 2021",
+        "additional": "Fundamentals of programming and software development"
+      }
+    ]
+  },
+  "languages": {
+    "sectionTitle": "Languages",
+    "spanish": {
+      "name": "Spanish",
+      "proficiency": "Native Language"
+    },
+    "english": {
+      "name": "English",
+      "proficiency": "Professional Working Proficiency"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Let's Connect",
+    "email": {
+      "title": "Email",
+      "connect": "Send me a message"
+    },
+    "phone": {
+      "title": "Phone",
+      "connect": "Call me"
+    },
+    "location": {
+      "title": "Location",
+      "connect": "View on map"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Explore my portfolio of web applications, AI solutions, and development tools",
+    "allProjects": "All Projects",
+    "viewDemo": "View Demo",
+    "viewCode": "View Code",
+    "privateProject": "Private Project",
+    "categories": {
+      "web": "Web Apps",
+      "ai": "AI & Automation",
+      "ecommerce": "E-commerce",
+      "mobile": "Mobile"
+    },
+    "items": [
+      {
+        "title": "TRG - Shipping Management System",
+        "description": "Complete system for managing container shipments from the USA to Cuba with process automation from dispatch to final distribution.",
+        "techStack": "Next.js, Material UI, PostgreSQL",
+        "type": "private",
+        "category": "Web",
+        "featured": true
+      },
+      {
+        "title": "Routule Print (Elstar)",
+        "description": "Platform for creating marketplaces and vertical integration of the entire value chain. Enables retail stores to create their system without programmers.",
+        "techStack": "Next.js, Tailwind CSS, Supabase",
+        "github": "https://github.com/username/routule-print",
+        "demo": "https://routule-print-demo.vercel.app",
+        "type": "public",
+        "category": "E-commerce",
+        "featured": true
+      },
+      {
+        "title": "Mily Shop - E-commerce Platform",
+        "description": "E-commerce platform with inventory management, payments, and order tracking. Built with modern web technologies for optimal performance.",
+        "techStack": "React, Node.js, MongoDB",
+        "github": "https://github.com/username/mily-shop",
+        "demo": "https://mily-shop-demo.vercel.app",
+        "type": "public",
+        "category": "E-commerce",
+        "featured": false
+      },
+      {
+        "title": "AI-Powered Document Analyzer",
+        "description": "Tool that uses artificial intelligence to analyze and extract key information from documents, contracts, and reports.",
+        "techStack": "Python, LangChain, OpenAI API",
+        "github": "https://github.com/username/doc-analyzer",
+        "demo": "https://doc-analyzer.streamlit.app",
+        "type": "public",
+        "category": "AI",
+        "featured": true
+      },
+      {
+        "title": "React Native Project",
+        "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
+        "techStack": "React Native, TypeScript",
+        "type": "private",
+        "category": "Mobile"
+      },
+      {
+        "title": "SOS Combo - E-commerce",
+        "description": "E-commerce store for shipping agency to Cuba from the USA with product catalog and admin panel.",
+        "techStack": "React, JavaScript, CSS, HTML",
+        "type": "private",
+        "category": "E-commerce"
+      },
+      {
+        "title": "Maranatha - Management System",
+        "description": "Comprehensive sales, messaging, and inventory management system for gift shops and convenience stores with payment integration.",
+        "techStack": "Next.js, Tailwind CSS, Supabase",
+        "type": "private",
+        "category": "Web"
+      },
+      {
+        "title": "Perxins - Havana Events",
+        "description": "Web application to view events in Havana: cinemas, theaters, parties, concerts, and entertainment activities. PWA deployed on AWS.",
+        "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
+        "github": "https://github.com/username/perxins",
+        "demo": "https://perxins.vercel.app",
+        "type": "public",
+        "category": "Web"
+      },
+      {
+        "title": "AI Bot with RAG",
+        "description": "Intelligent bot connected to database using LangChain and LangGraph for augmented information retrieval with workflow automation.",
+        "techStack": "LangChain, LangGraph, n8n",
+        "github": "https://github.com/username/ai-bot-rag",
+        "demo": "https://ai-bot-rag.vercel.app",
+        "type": "public",
+        "category": "AI",
+        "featured": true
+      },
+      {
+        "title": "Poinger - Web Improvements",
+        "description": "Improvements to business website for product catalog with error resolution and site optimization.",
+        "techStack": "PHP, MySQL",
+        "github": "https://github.com/username/poinger",
+        "type": "public",
+        "category": "Web"
+      },
+      {
+        "title": "React Native Project",
+        "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
+        "techStack": "React Native, TypeScript",
+        "link": "#",
+        "type": "private",
+        "category": "Mobile"
+      }
+    ]
+  }
+}

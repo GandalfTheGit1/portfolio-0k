@@ -3,70 +3,68 @@
 import { motion } from "framer-motion"
 import { Briefcase, Calendar, MapPin, Zap, Users, Crown } from "lucide-react"
 import SectionHeading from "./SectionHeading"
+import { useI18n } from "@/app/components/I18nProvider"
+
+type TranslationFunction = {
+  (key: string): string;
+  <T = any>(key: string, options: { returnObjects: true }): T;
+}
+
+interface Project {
+  title: string;
+  description: string;
+}
+
+interface ExperienceItem {
+  period: string;
+  role: string;
+  company: string;
+  color: string;
+  type: string;
+  projects: Project[];
+  key: string;
+}
 
 export default function Experience() {
-  const experiences = [
+  const { t } = useI18n() as { t: TranslationFunction };
+  
+  const getProjects = (key: string): Project[] => {
+    try {
+      const projects = t<Project[]>(`experience.${key}.projects`, { returnObjects: true });
+      return Array.isArray(projects) ? projects : [];
+    } catch (error) {
+      console.error(`Error loading projects for ${key}:`, error);
+      return [];
+    }
+  };
+  
+  const experiences: ExperienceItem[] = [
     {
-      period: "2021 - Presente",
-      role: "Desarrollador Fullstack Freelance",
-      company: "Proyectos Independientes",
+      period: t("experience.periods.freelance"),
+      role: t("experience.freelance.role"),
+      company: t("experience.freelance.company"),
       color: "indigo",
       type: "professional",
-      projects: [
-        {
-          title: "🚀 Sistemas de Automatización Empresarial",
-          description:
-            "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados.",
-        },
-        {
-          title: "💼 Soluciones de Gestión Interna",
-          description:
-            "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros.",
-        },
-        {
-          title: "🤖 Integración de IA y LangChain",
-          description:
-            "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales.",
-        },
-      ],
+      projects: getProjects("freelance"),
+      key: "freelance"
     },
     {
-      period: "2020 - 2021",
-      role: "Especialista en Reparación de Hardware",
-      company: "Servicios Técnicos Independientes",
+      period: t("experience.periods.hardwareSpecialist"),
+      role: t("experience.hardwareSpecialist.role"),
+      company: t("experience.hardwareSpecialist.company"),
       color: "blue",
       type: "professional",
-      projects: [
-        {
-          title: "🔨 Diagnóstico y Reparación de Equipos",
-          description:
-            "Diagnóstico, reparación y mantenimiento de computadoras, laptops y equipos informáticos. Resolución de problemas de hardware y software para clientes particulares y pequeñas empresas.",
-        },
-        {
-          title: "💻 Soporte Técnico Integral",
-          description:
-            "Prestación de servicios de soporte técnico, instalación de sistemas operativos, configuración de redes y asesoramiento en compra de equipos informáticos.",
-        },
-      ],
+      projects: getProjects("hardwareSpecialist"),
+      key: "hardwareSpecialist"
     },
     {
-      period: "2021 - 2025",
-      role: "Estudiante de Contabilidad y Finanzas",
-      company: "Formación Académica",
+      period: t("experience.periods.education"),
+      role: t("experience.education.role"),
+      company: t("experience.education.company"),
       color: "violet",
       type: "education",
-      projects: [
-        {
-          title: "📊 Fundamentos Empresariales",
-          description:
-            "Formación sólida en principios contables, análisis financiero y gestión empresarial. Base teórica que complementa el desarrollo de soluciones tecnológicas para negocios.",
-        },
-        {
-          title: "💡 Visión Integral de Negocios",
-          description:
-            "Desarrollo de comprensión profunda de procesos empresariales, lo que permite crear soluciones tecnológicas más efectivas y alineadas con objetivos comerciales.",
-        },
-      ],
+      projects: getProjects("education"),
+      key: "education"
     },
   ]
 
@@ -76,7 +74,7 @@ export default function Experience() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title="Experiencia" />
+        <SectionHeading title={t("experience.sectionTitle")} />
 
         <div className="max-w-5xl mx-auto">
           {experiences.map((exp, index) => (
@@ -140,13 +138,13 @@ export default function Experience() {
                     <span className="text-slate-300">{exp.company}</span>
                     {exp.type === "leadership" && (
                       <span className="ml-3 px-2 py-1 bg-violet-500/20 text-violet-300 text-xs rounded-full border border-violet-500/30">
-                        Leadership
+                        {t("experience.labels.leadership")}
                       </span>
                     )}
                   </div>
 
                   <div className="space-y-4">
-                    {exp.projects.map((project, i) => (
+                    {exp.projects.map((project: Project, i: number) => (
                       <motion.div
                         key={i}
                         className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 group hover:border-indigo-500/30 transition-colors duration-300"

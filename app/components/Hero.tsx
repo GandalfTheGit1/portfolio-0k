@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Github as GitHub, Linkedin, Mail, Cloud } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
+import { useI18n } from "@/app/components/I18nProvider"
 
 // Enhanced typing animation component
 const TypingAnimation = ({ text, delay = 0 }: { text: string; delay?: number }) => {
@@ -251,6 +252,7 @@ const CodeEditorAnimation = () => {
 }
 
 export default function Hero() {
+  const { t } = useI18n()
   return (
     <section
       id="hero"
@@ -285,12 +287,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Hello, World!
+            {t("hero.greeting")}
           </motion.p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display">
             <span className="text-white">
-              <TypingAnimation text="Soy William Marrero" />
+              <TypingAnimation text={t("hero.nameTyping")} />
             </span>
           </h1>
 
@@ -301,13 +303,13 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
           >
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-indigo-300 border border-indigo-500/20">
-              Desarrollador Fullstack
+              {t("hero.badges.fullstack")}
             </span>
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-blue-300 border border-blue-500/20">
-              Automatización
+              {t("hero.badges.automation")}
             </span>
             <span className="px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-full text-violet-300 border border-violet-500/20">
-              Sistemas Internos
+              {t("hero.badges.internalSystems")}
             </span>
           </motion.div>
 
@@ -317,9 +319,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Desarrollador Fullstack especializado en sistemas internos y automatización de procesos empresariales.
-            Experiencia en React, Next.js, Nest.js, Supabase, LangChain y n8n para crear soluciones tecnológicas
-            innovadoras que optimizan operaciones comerciales.
+            {t("hero.blurb")}
           </motion.p>
 
           <motion.div
@@ -331,28 +331,28 @@ export default function Hero() {
             <a
               href="https://www.linkedin.com/in/william-marrero-masferrer/"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
-              aria-label="LinkedIn Profile"
+              aria-label={t("hero.aria.linkedin")}
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:masferrerw@gmail.com"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
-              aria-label="Email Contact"
+              aria-label={t("hero.aria.email")}
             >
               <Mail className="w-6 h-6" />
             </a>
             <a
               href="https://github.com/masferrer"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
-              aria-label="GitHub Profile"
+              aria-label={t("hero.aria.github")}
             >
               <GitHub className="w-6 h-6" />
             </a>
             <a
               href="https://williammarrero.dev"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
-              aria-label="Portfolio Website"
+              aria-label={t("hero.aria.portfolio")}
             >
               <Cloud className="w-6 h-6" />
             </a>
@@ -370,7 +370,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Descargar CV</span>
+              <span>{t("hero.buttons.downloadCV")}</span>
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
                 →
               </motion.span>
@@ -379,7 +379,7 @@ export default function Hero() {
               onClick={() => smoothScrollTo("about")}
               className="px-8 py-3 border border-indigo-500 text-indigo-300 hover:bg-indigo-600/20 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Explorar Mi Trabajo</span>
+              <span>{t("hero.buttons.exploreWork")}</span>
               <motion.span animate={{ y: [0, 5, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
                 ↓
               </motion.span>
