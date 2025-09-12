@@ -24,11 +24,20 @@ function get(obj: any, path: string): any {
   return path.split(".").reduce((acc, part) => (acc && acc[part] != null ? acc[part] : undefined), obj)
 }
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(() => {
-    if (typeof window === "undefined") return "en"
-    return (localStorage.getItem("locale") as Locale) || "en"
-  })
+export function I18nProvider({ children, initialLocale = "en" }: { children: React.ReactNode; initialLocale?: Locale }) {
+  const [locale, setLocale] = useState<Locale>(() => initialLocale)
+
+  // After mount, reconcile with localStorage (but avoid flicker if same)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = (localStorage.getItem("locale") as Locale) || initialLocale
+      if (stored && stored !== locale) {
+        setLocale(stored)
+      }
+    }
+    // We only want to run this once on mount to sync from storage
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     if (typeof window !== "undefined") {

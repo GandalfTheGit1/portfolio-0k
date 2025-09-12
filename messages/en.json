@@ -9,7 +9,7 @@
     "contact": "Contact"
   },
   "site": {
-    "title": "The Baskerville Blueprint"
+    "title": ""
   },
   "hero": {
     "greeting": "Hello, World!",
@@ -42,7 +42,7 @@
       "db": { "title": "Databases", "desc": "Supabase, PostgreSQL, MongoDB" },
       "ai": { "title": "AI/Automation", "desc": "LangChain, LangGraph, n8n, RAG" },
       "business": { "title": "Business", "desc": "Accounting, Finance, Management" },
-      "other": { "title": "Other", "desc": "React Native, Hardware Repair" }
+      "other": { "title": "Other", "desc": "Flutter, Hardware Repair" }
     }
   },
   "experience": {
