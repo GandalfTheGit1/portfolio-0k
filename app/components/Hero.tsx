@@ -252,7 +252,9 @@ const CodeEditorAnimation = () => {
 }
 
 export default function Hero() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+  const cvHref = locale === "es" ? "/cv-william-marrero-es.pdf" : "/cv-william-marrero-en.pdf"
+  const cvDownloadName = locale === "es" ? "William-Marrero-CV-ES.pdf" : "William-Marrero-CV-EN.pdf"
   return (
     <section
       id="hero"
@@ -336,14 +338,14 @@ export default function Hero() {
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="mailto:masferrerw@gmail.com"
+              href="mailto:marrerow613@gmail.com"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label={t("hero.aria.email")}
             >
               <Mail className="w-6 h-6" />
             </a>
             <a
-              href="https://github.com/masferrer"
+              href="https://github.com/GandalfTheGit1"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label={t("hero.aria.github")}
             >
@@ -365,10 +367,11 @@ export default function Hero() {
             transition={{ delay: 1 }}
           >
             <a
-              href="/cv-william-marrero.pdf"
+              href={cvHref}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2"
+              download={cvDownloadName}
             >
               <span>{t("hero.buttons.downloadCV")}</span>
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
