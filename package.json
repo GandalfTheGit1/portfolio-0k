@@ -7,7 +7,9 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "deploy": "git add . && git commit -m \"Update portfolio\" && git push origin main",
+    "deploy-msg": "npm run deploy"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
