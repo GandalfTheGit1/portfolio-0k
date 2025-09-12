@@ -187,26 +187,11 @@
         "featured": false
       },
       {
-        "title": "AI-Powered Document Analyzer",
-        "description": "Tool that uses artificial intelligence to analyze and extract key information from documents, contracts, and reports.",
-        "techStack": "Python, LangChain, OpenAI API",
-        "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
-        "type": "public",
-        "category": "AI",
-        "featured": true
-      },
-      {
-        "title": "Flutter Project",
-        "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
-        "techStack": "Flutter, Dart",
-        "type": "private",
-        "category": "Mobile"
-      },
-      {
         "title": "SOS Combo - E-commerce",
         "description": "E-commerce store for shipping agency to Cuba from the USA with product catalog and admin panel.",
         "techStack": "React, JavaScript, CSS, HTML",
         "type": "private",
+        "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
       },
       {
@@ -239,6 +224,13 @@
         "techStack": "PHP, MySQL",
         "type": "private",
         "category": "Web"
+      },
+      {
+        "title": "Flutter Project",
+        "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
+        "techStack": "Flutter, Dart",
+        "type": "private",
+        "category": "Mobile"
       }
     ]
   }

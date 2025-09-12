@@ -156,7 +156,7 @@ export default function Skills() {
     {
       icon: Layers,
       title: "Otros Conocimientos",
-      technologies: "React Native, Tailwind CSS",
+      technologies: "Flutter",
       description: "Desarrollo multiplataforma y diseño de interfaces con frameworks modernos.",
       color: "indigo",
     },

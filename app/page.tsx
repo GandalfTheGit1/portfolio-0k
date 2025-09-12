@@ -20,7 +20,7 @@ export default function Home() {
       {/* <Skills /> */}
       <Education />
       {/* <Research /> */}
-      <Certifications />
+      {/* <Certifications /> */}
       <Projects />
       <Languages />
       <Contact />

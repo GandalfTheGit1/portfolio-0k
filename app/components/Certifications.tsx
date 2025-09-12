@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { Award, CheckCircle, ExternalLink } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
@@ -55,25 +55,59 @@ const CertificateCard = ({
 
 // Floating particles animation
 const FloatingParticles = () => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Predefined particle configurations to avoid hydration mismatch
+  const particleConfigs = [
+    { x: 28.4, y: 13.2, scale: 0.5, opacity: 0.75, duration: 25 },
+    { x: 21.9, y: 89.7, scale: 0.5, opacity: 0.74, duration: 30 },
+    { x: 74.8, y: 67.8, scale: 0.56, opacity: 0.73, duration: 35 },
+    { x: 97.9, y: 16.3, scale: 0.83, opacity: 0.59, duration: 28 },
+    { x: 41.1, y: 56.3, scale: 0.7, opacity: 0.44, duration: 32 },
+    { x: 5.3, y: 80.5, scale: 0.75, opacity: 0.69, duration: 26 },
+    { x: 3.5, y: 76.2, scale: 0.9, opacity: 0.35, duration: 29 },
+    { x: 24.1, y: 42.2, scale: 0.6, opacity: 0.59, duration: 31 },
+    { x: 2.8, y: 53.1, scale: 0.94, opacity: 0.63, duration: 27 },
+    { x: 95.9, y: 67.5, scale: 0.89, opacity: 0.59, duration: 33 },
+  ]
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 30 }).map((_, i) => (
+      {particleConfigs.map((config, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 rounded-full bg-indigo-500/20"
           initial={{
-            x: Math.random() * 100 + "%",
-            y: Math.random() * 100 + "%",
-            scale: Math.random() * 0.5 + 0.5,
-            opacity: Math.random() * 0.5 + 0.3,
+            x: config.x + "%",
+            y: config.y + "%",
+            scale: config.scale,
+            opacity: config.opacity,
           }}
           animate={{
-            x: [Math.random() * 100 + "%", Math.random() * 100 + "%", Math.random() * 100 + "%"],
-            y: [Math.random() * 100 + "%", Math.random() * 100 + "%", Math.random() * 100 + "%"],
+            x: [
+              config.x + "%",
+              (config.x + 15) % 100 + "%",
+              (config.x + 30) % 100 + "%",
+              config.x + "%",
+            ],
+            y: [
+              config.y + "%",
+              (config.y + 25) % 100 + "%",
+              (config.y + 50) % 100 + "%",
+              config.y + "%",
+            ],
             rotate: [0, 180, 360],
           }}
           transition={{
-            duration: Math.random() * 20 + 20,
+            duration: config.duration,
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}

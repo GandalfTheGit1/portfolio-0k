@@ -4,37 +4,62 @@ import { motion } from "framer-motion"
 import { Code, Database, Server, Brain, Clipboard, Settings } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import { useI18n } from "@/app/components/I18nProvider"
+import { useEffect, useState } from "react"
 
 // Particle animation component
 const ParticleField = () => {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Predefined particle configurations to avoid hydration mismatch
+  const particleConfigs = [
+    { x: 80.4, y: 79.9, scale: 0.7, opacity: 0.55, duration: 25 },
+    { x: 15.4, y: 22.5, scale: 0.55, opacity: 0.64, duration: 30 },
+    { x: 72.9, y: 92.8, scale: 0.7, opacity: 0.36, duration: 35 },
+    { x: 77.5, y: 44.7, scale: 0.91, opacity: 0.52, duration: 28 },
+    { x: 92.9, y: 9.5, scale: 0.93, opacity: 0.34, duration: 32 },
+    { x: 83.3, y: 41.3, scale: 0.9, opacity: 0.49, duration: 26 },
+    { x: 6.0, y: 97.1, scale: 0.55, opacity: 0.74, duration: 29 },
+    { x: 46.3, y: 90.8, scale: 0.63, opacity: 0.47, duration: 31 },
+    { x: 72.9, y: 29.3, scale: 0.8, opacity: 0.76, duration: 27 },
+    { x: 56.1, y: 38.1, scale: 0.87, opacity: 0.58, duration: 33 },
+  ]
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 50 }).map((_, i) => (
+      {particleConfigs.map((config, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 rounded-full bg-indigo-500/30"
           initial={{
-            x: Math.random() * 100 + "%",
-            y: Math.random() * 100 + "%",
-            scale: Math.random() * 0.5 + 0.5,
-            opacity: Math.random() * 0.5 + 0.3,
+            x: config.x + "%",
+            y: config.y + "%",
+            scale: config.scale,
+            opacity: config.opacity,
           }}
           animate={{
             x: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
+              config.x + "%",
+              (config.x + 20) % 100 + "%",
+              (config.x + 40) % 100 + "%",
+              config.x + "%",
             ],
             y: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
+              config.y + "%",
+              (config.y + 30) % 100 + "%",
+              (config.y + 60) % 100 + "%",
+              config.y + "%",
             ],
           }}
           transition={{
-            duration: Math.random() * 20 + 20,
+            duration: config.duration,
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
