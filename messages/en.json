@@ -244,14 +244,6 @@
         "github": "https://github.com/username/poinger",
         "type": "public",
         "category": "Web"
-      },
-      {
-        "title": "React Native Project",
-        "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
-        "techStack": "React Native, TypeScript",
-        "link": "#",
-        "type": "private",
-        "category": "Mobile"
       }
     ]
   }
