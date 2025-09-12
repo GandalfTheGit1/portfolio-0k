@@ -331,7 +331,7 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
           >
             <a
-              href="https://www.linkedin.com/in/william-marrero-masferrer/"
+              href="https://www.linkedin.com/in/william-marrero-679978383/"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label={t("hero.aria.linkedin")}
             >
