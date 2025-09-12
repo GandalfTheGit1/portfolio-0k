@@ -163,7 +163,8 @@
         "title": "TRG - Shipping Management System",
         "description": "Complete system for managing container shipments from the USA to Cuba with process automation from dispatch to final distribution.",
         "techStack": "Next.js, Material UI, PostgreSQL",
-        "type": "private",
+        "github": "https://github.com/GandalfTheGit1/TGR---1.git",
+        "type": "public",
         "category": "Web",
         "featured": true
       },
@@ -171,18 +172,16 @@
         "title": "Routule Print (Elstar)",
         "description": "Platform for creating marketplaces and vertical integration of the entire value chain. Enables retail stores to create their system without programmers.",
         "techStack": "Next.js, Tailwind CSS, Supabase",
-        "github": "https://github.com/username/routule-print",
-        "demo": "https://routule-print-demo.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/Cauto_StoreAdmin.git",
         "type": "public",
         "category": "E-commerce",
         "featured": true
       },
       {
-        "title": "Mily Shop - E-commerce Platform",
+        "title": "Mily Travel - E-commerce Platform",
         "description": "E-commerce platform with inventory management, payments, and order tracking. Built with modern web technologies for optimal performance.",
         "techStack": "React, Node.js, MongoDB",
-        "github": "https://github.com/username/mily-shop",
-        "demo": "https://mily-shop-demo.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/milyTravelFront2.git",
         "type": "public",
         "category": "E-commerce",
         "featured": false
@@ -191,16 +190,15 @@
         "title": "AI-Powered Document Analyzer",
         "description": "Tool that uses artificial intelligence to analyze and extract key information from documents, contracts, and reports.",
         "techStack": "Python, LangChain, OpenAI API",
-        "github": "https://github.com/username/doc-analyzer",
-        "demo": "https://doc-analyzer.streamlit.app",
+        "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
         "type": "public",
         "category": "AI",
         "featured": true
       },
       {
-        "title": "React Native Project",
+        "title": "Flutter Project",
         "description": "Mobile application in development to complement the web ecosystem. Learning and expansion project towards mobile platforms.",
-        "techStack": "React Native, TypeScript",
+        "techStack": "Flutter, Dart",
         "type": "private",
         "category": "Mobile"
       },
@@ -222,8 +220,7 @@
         "title": "Perxins - Havana Events",
         "description": "Web application to view events in Havana: cinemas, theaters, parties, concerts, and entertainment activities. PWA deployed on AWS.",
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
-        "github": "https://github.com/username/perxins",
-        "demo": "https://perxins.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
         "category": "Web"
       },
@@ -231,8 +228,7 @@
         "title": "AI Bot with RAG",
         "description": "Intelligent bot connected to database using LangChain and LangGraph for augmented information retrieval with workflow automation.",
         "techStack": "LangChain, LangGraph, n8n",
-        "github": "https://github.com/username/ai-bot-rag",
-        "demo": "https://ai-bot-rag.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
         "type": "public",
         "category": "AI",
         "featured": true
@@ -241,8 +237,7 @@
         "title": "Poinger - Web Improvements",
         "description": "Improvements to business website for product catalog with error resolution and site optimization.",
         "techStack": "PHP, MySQL",
-        "github": "https://github.com/username/poinger",
-        "type": "public",
+        "type": "private",
         "category": "Web"
       }
     ]

@@ -203,14 +203,20 @@ export default function Projects() {
                         <p className="text-sm text-slate-400 mb-3">{project.techStack}</p>
                         <div className="flex gap-3">
                           {project.demo && (
-                            <a
-                              href={project.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center px-3 py-1.5 text-sm bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition-colors"
-                            >
-                              {t('projects.viewDemo')}
-                            </a>
+                            project.demo === "Coming" ? (
+                              <span className="inline-flex items-center px-3 py-1.5 text-sm bg-slate-600 text-slate-300 rounded-md cursor-not-allowed">
+                                Coming Soon
+                              </span>
+                            ) : (
+                              <a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-3 py-1.5 text-sm bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition-colors"
+                              >
+                                {t('projects.viewDemo')}
+                              </a>
+                            )
                           )}
                           {project.github ? (
                             <a

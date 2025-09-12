@@ -163,7 +163,8 @@
         "title": "TRG - Sistema de Gestión de Envíos",
         "description": "Sistema completo para gestión de envíos de contenedores desde EE.UU. hacia Cuba con automatización de procesos desde despacho hasta distribución final.",
         "techStack": "Next.js, Material UI, PostgreSQL",
-        "type": "private",
+        "github": "https://github.com/GandalfTheGit1/TGR---1.git",
+        "type": "public",
         "category": "Web",
         "featured": true
       },
@@ -171,8 +172,7 @@
         "title": "Routule Print (Elstar)",
         "description": "Plataforma para crear marketplaces e integración vertical de toda la cadena de valor. Facilita a tiendas minoristas crear su sistema sin programadores.",
         "techStack": "Next.js, Tailwind CSS, Supabase",
-        "github": "https://github.com/username/routule-print",
-        "demo": "https://routule-print-demo.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/Cauto_StoreAdmin.git",
         "type": "public",
         "category": "E-commerce",
         "featured": true
@@ -181,8 +181,7 @@
         "title": "Comercio Electrónico Mily Travel",
         "description": "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
         "techStack": "React, Tailwind CSS, Nest.js",
-        "github": "https://github.com/username/mily-travel",
-        "demo": "https://mily-travel.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/milyTravelFront2.git",
         "type": "public",
         "category": "E-commerce"
       },
@@ -197,8 +196,7 @@
         "title": "Perxins - Eventos La Habana",
         "description": "Aplicación web para visualizar eventos en La Habana: cines, teatros, fiestas, conciertos y actividades de entretenimiento. PWA con despliegue en AWS.",
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
-        "github": "https://github.com/username/perxins",
-        "demo": "https://perxins.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
         "category": "Web"
       },
@@ -213,8 +211,7 @@
         "title": "AI Bot con RAG",
         "description": "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
         "techStack": "LangChain, LangGraph, n8n",
-        "github": "https://github.com/username/ai-bot-rag",
-        "demo": "https://ai-bot-rag.vercel.app",
+        "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
         "type": "public",
         "category": "AI",
         "featured": true
@@ -223,15 +220,13 @@
         "title": "Poinger - Mejoras Web",
         "description": "Mejoras en página web empresarial para catálogo de productos con resolución de errores y optimización del sitio.",
         "techStack": "PHP, MySQL",
-        "github": "https://github.com/username/poinger",
-        "type": "public",
+        "type": "private",
         "category": "Web"
       },
       {
-        "title": "Proyecto React Native",
+        "title": "Proyecto Flutter",
         "description": "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
-        "techStack": "React Native, TypeScript",
-        "link": "#",
+        "techStack": "Flutter, Dart",
         "type": "private",
         "category": "Mobile"
       }
