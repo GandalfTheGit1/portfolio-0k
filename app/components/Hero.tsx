@@ -350,7 +350,7 @@ export default function Hero() {
               <GitHub className="w-6 h-6" />
             </a>
             <a
-              href="https://williammarrero.dev"
+              href="https://william-marrero.vercel.app"
               className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 hover:bg-indigo-600 hover:border-indigo-500 transition-all duration-300"
               aria-label={t("hero.aria.portfolio")}
             >
