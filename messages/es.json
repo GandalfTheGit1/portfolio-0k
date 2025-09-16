@@ -229,6 +229,7 @@
         "description": "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
         "techStack": "Flutter, Dart",
         "type": "private",
+        "demo": "comming",
         "category": "Mobile"
       } 
     ]
