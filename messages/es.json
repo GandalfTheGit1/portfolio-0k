@@ -198,6 +198,7 @@
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
         "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
+        "demo":"perxins-demo.vercel.app",
         "category": "Web"
       },
       {
@@ -229,7 +230,7 @@
         "description": "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
         "techStack": "Flutter, Dart",
         "type": "private",
-        "demo": "comming",
+        "demo": "Coming",
         "category": "Mobile"
       } 
     ]
