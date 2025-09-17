@@ -198,7 +198,7 @@
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
         "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
-        "demo":"perxins-demo.vercel.app",
+        "demo":"https://perxins-demo.vercel.app",
         "category": "Web"
       },
       {
