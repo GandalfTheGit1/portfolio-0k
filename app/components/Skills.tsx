@@ -156,7 +156,7 @@ export default function Skills() {
     {
       icon: Layers,
       title: "Otros Conocimientos",
-      technologies: "Flutter",
+      technologies: "React Native",
       description: "Desarrollo multiplataforma y diseño de interfaces con frameworks modernos.",
       color: "indigo",
     },

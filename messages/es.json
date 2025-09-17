@@ -42,7 +42,7 @@
       "db": { "title": "Base de Datos", "desc": "Supabase, PostgreSQL, MongoDB" },
       "ai": { "title": "IA/Automatización", "desc": "LangChain, LangGraph, n8n, RAG" },
       "business": { "title": "Negocios", "desc": "Contabilidad, Finanzas, Gestión" },
-      "other": { "title": "Otros", "desc": "Flutter, Reparación Hardware" }
+      "other": { "title": "Otros", "desc": "React Native, Reparación Hardware" }
     }
   },
   "experience": {
@@ -206,6 +206,7 @@
         "description": "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
         "techStack": "React, JavaScript, CSS, HTML",
         "type": "private",
+        "demo":"https://sos-combo.vercel.app",
         "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
       },
@@ -226,9 +227,9 @@
         "category": "Web"
       },
       {
-        "title": "Proyecto Flutter",
+        "title": "Proyecto React Native",
         "description": "Aplicación móvil en desarrollo para complementar el ecosistema web. Proyecto de aprendizaje y expansión hacia plataformas móviles.",
-        "techStack": "Flutter, Dart",
+        "techStack": "React Native",
         "type": "private",
         "demo": "Coming",
         "category": "Mobile"
