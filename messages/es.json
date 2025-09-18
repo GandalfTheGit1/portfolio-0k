@@ -181,7 +181,8 @@
         "title": "Comercio Electrónico Mily Travel",
         "description": "Plataforma de comercio electrónico especializada en servicios de viajes y turismo con sistema de reservas, gestión de paquetes turísticos y procesamiento de pagos integrado.",
         "techStack": "React, Tailwind CSS, Nest.js",
-        "github": "https://github.com/GandalfTheGit1/milyTravelFront2.git",
+        "demo": "https://mily-travel-demo.vercel.app/",
+        "github": "https://github.com/GandalfTheGit1/MilyTravel-Demo.git",
         "type": "public",
         "category": "E-commerce"
       },
@@ -204,9 +205,9 @@
       {
         "title": "SOS Combo - E-commerce",
         "description": "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
-        "techStack": "React, JavaScript, CSS, HTML",
+        "techStack": "JavaScript, CSS, HTML",
         "type": "private",
-        "demo":"https://sos-combo.vercel.app",
+        "demo":"https://sos-combos.vercel.app",
         "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
       },

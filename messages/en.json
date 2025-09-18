@@ -37,12 +37,30 @@
     "p1": "Fullstack developer with experience in internal systems, business process automation and computer hardware repair. Specialized in React, Next.js, Nest.js, Supabase and AI technologies.",
     "p2": "Background in Accounting and Finance with a strong focus on tech solutions for business. Over 8 projects delivered for business management in shipping, exports and retail.",
     "skills": {
-      "frontend": { "title": "Frontend", "desc": "React, Next.js, Tailwind CSS, JavaScript" },
-      "backend": { "title": "Backend", "desc": "Nest.js, Node.js, REST APIs" },
-      "db": { "title": "Databases", "desc": "Supabase, PostgreSQL, MongoDB" },
-      "ai": { "title": "AI/Automation", "desc": "LangChain, LangGraph, n8n, RAG" },
-      "business": { "title": "Business", "desc": "Accounting, Finance, Management" },
-      "other": { "title": "Other", "desc": "React Native, Hardware Repair" }
+      "frontend": {
+        "title": "Frontend",
+        "desc": "React, Next.js, Tailwind CSS, JavaScript"
+      },
+      "backend": {
+        "title": "Backend",
+        "desc": "Nest.js, Node.js, REST APIs"
+      },
+      "db": {
+        "title": "Databases",
+        "desc": "Supabase, PostgreSQL, MongoDB"
+      },
+      "ai": {
+        "title": "AI/Automation",
+        "desc": "LangChain, LangGraph, n8n, RAG"
+      },
+      "business": {
+        "title": "Business",
+        "desc": "Accounting, Finance, Management"
+      },
+      "other": {
+        "title": "Other",
+        "desc": "React Native, Hardware Repair"
+      }
     }
   },
   "experience": {
@@ -181,7 +199,8 @@
         "title": "Mily Travel - E-commerce Platform",
         "description": "E-commerce platform with inventory management, payments, and order tracking. Built with modern web technologies for optimal performance.",
         "techStack": "React, Node.js, MongoDB",
-        "github": "https://github.com/GandalfTheGit1/milyTravelFront2.git",
+        "demo": "https://mily-travel-demo.vercel.app/",
+        "github": "https://github.com/GandalfTheGit1/MilyTravel-Demo.git",
         "type": "public",
         "category": "E-commerce",
         "featured": false
@@ -189,10 +208,9 @@
       {
         "title": "SOS Combo - E-commerce",
         "description": "E-commerce store for shipping agency to Cuba from the USA with product catalog and admin panel.",
-        "techStack": "React, JavaScript, CSS, HTML",
+        "techStack": "JavaScript, CSS, HTML",
         "type": "private",
-        "demo":"https://sos-combo.vercel.app",
-
+        "demo": "https://sos-combos.vercel.app",
         "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
       },
@@ -209,7 +227,7 @@
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
         "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
-        "demo":"https://perxins-demo.vercel.app",
+        "demo": "https://perxins-demo.vercel.app",
         "category": "Web"
       },
       {
