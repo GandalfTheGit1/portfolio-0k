@@ -94,7 +94,7 @@ export default function Contact() {
             icon={MapPin} 
             title={t('contact.location.title')} 
             content="La Habana, Cuba" 
-            link="#" 
+            link="https://share.google/gGjt0iN5uPG3PMCJA" 
             delay={0.3} 
             color="purple"
             connectText={t('contact.location.connect')}
