@@ -93,7 +93,7 @@ export default function Contact() {
           <ContactCard 
             icon={MapPin} 
             title={t('contact.location.title')} 
-            content="La Habana, Cuba" 
+            content={t('contact.location.place')} 
             link="https://share.google/gGjt0iN5uPG3PMCJA" 
             delay={0.3} 
             color="purple"
