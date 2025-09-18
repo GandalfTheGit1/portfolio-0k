@@ -135,7 +135,7 @@ export default function Skills() {
     {
       icon: Network,
       title: "Automatización & AI",
-      technologies: "LangChain, LangGraph, n8n, RAG",
+      technologies: "LangChain, LangGraph, RAG",
       description: "Implementación de soluciones de IA y automatización para optimizar procesos empresariales.",
       color: "red",
     },

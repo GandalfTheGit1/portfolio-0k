@@ -51,7 +51,7 @@
       },
       "ai": {
         "title": "AI/Automation",
-        "desc": "LangChain, LangGraph, n8n, RAG"
+        "desc": "LangChain, LangGraph, RAG"
       },
       "business": {
         "title": "Business",
@@ -209,7 +209,6 @@
         "title": "SOS Combo - E-commerce",
         "description": "E-commerce store for shipping agency to Cuba from the USA with product catalog and admin panel.",
         "techStack": "JavaScript, CSS, HTML",
-        "type": "private",
         "demo": "https://sos-combos.vercel.app",
         "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
@@ -233,7 +232,7 @@
       {
         "title": "AI Bot with RAG",
         "description": "Intelligent bot connected to database using LangChain and LangGraph for augmented information retrieval with workflow automation.",
-        "techStack": "LangChain, LangGraph, n8n",
+        "techStack": "LangChain, LangGraph",
         "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
         "type": "public",
         "category": "AI",

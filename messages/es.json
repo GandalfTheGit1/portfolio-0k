@@ -214,7 +214,7 @@
       {
         "title": "AI Bot con RAG",
         "description": "Bot inteligente conectado a base de datos utilizando LangChain y LangGraph para recuperación aumentada de información con automatización de flujos.",
-        "techStack": "LangChain, LangGraph, n8n",
+        "techStack": "LangChain, LangGraph",
         "github": "https://github.com/GandalfTheGit1/accounting-chatbot.git",
         "type": "public",
         "category": "AI",
