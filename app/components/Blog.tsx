@@ -81,6 +81,17 @@ export default function Blog() {
       slug: "agentic-rag",
     },
     {
+      id: "feedback-based-rag",
+      title: "Feedback-Based RAG: Self-Improving Retrieval with User Signals",
+      excerpt:
+        "Use explicit/implicit feedback to rerank, retrain, and continuously improve RAG quality.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "Feedback", "Rerank", "Optimization"],
+      slug: "feedback-based-rag",
+    },
+    {
       id: "self-rag",
       title: "Self-RAG: Retrieve, Generate, Critique for Higher Factuality",
       excerpt:
@@ -125,6 +136,17 @@ export default function Blog() {
       slug: "multi-source-rag",
     },
     {
+      id: "adversarial-rag",
+      title: "Adversarial RAG: Harden Your System Against Injection & Poisoning",
+      excerpt:
+        "Defend RAG against prompt injection, document poisoning, and exfiltration with layered defenses.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Security", "Prompt Injection", "Poisoning"],
+      slug: "adversarial-rag",
+    },
+    {
       id: "hierarchical-rag",
       title: "Hierarchical RAG: Top-Down Indexing for Large Corpora",
       excerpt:
@@ -134,6 +156,94 @@ export default function Blog() {
       readTime: "12 min",
       tags: ["RAG", "Hierarchy", "Indexing", "Scaling"],
       slug: "hierarchical-rag",
+    },
+    {
+      id: "multi-pass-rag",
+      title: "Multi-Pass RAG: Iterative Retrieval That Boosts Accuracy",
+      excerpt:
+        "Run 2–3 retrieval→generation passes. First pass casts a wide net; later passes rerank and refine.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "12 min",
+      tags: ["RAG", "Iteration", "Rerank", "Hybrid"],
+      slug: "multi-pass-rag",
+    },
+    {
+      id: "auto-rag",
+      title: "Auto RAG: Self-Managing Ingestion, Indexing, and Optimization",
+      excerpt:
+        "Automate ingestion, smart chunking, deduplication, reindexing, and tuning to keep retrieval fresh and performant.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Automation", "Indexing", "Tuning"],
+      slug: "auto-rag",
+    },
+    {
+      id: "hybrid-rag",
+      title: "Hybrid RAG: Blend Offline Docs, Web, APIs, and Databases",
+      excerpt:
+        "Combine offline corpora with web, APIs, and databases via routing and merging to boost freshness and coverage.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Hybrid", "Web", "API", "DB"],
+      slug: "hybrid-rag",
+    },
+    {
+      id: "realm",
+      title: "REALM: Retrieval-Augmented Pretraining Explained (Practical Guide)",
+      excerpt:
+        "REALM jointly trains retriever + LM. Practical approximations: retrieval-augmented fine-tuning, frozen retrievers.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "15 min",
+      tags: ["RAG", "REALM", "Pretraining", "Retriever"],
+      slug: "realm",
+    },
+    {
+      id: "raptor",
+      title: "RAPTOR: Tree-Organized Retrieval with Recursive Summaries",
+      excerpt:
+        "Build hierarchical summaries and retrieve across levels for long documents and theme-based queries.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "RAPTOR", "Hierarchy", "Summarization"],
+      slug: "raptor",
+    },
+    {
+      id: "react-rag",
+      title: "ReAct RAG: Reasoning + Acting with Tools and Retrieval",
+      excerpt:
+        "Interleave reasoning with retrieval/tool calls. Route, fetch, and verify step‑by‑step for complex queries.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "ReAct", "Agents", "Tools"],
+      slug: "react-rag",
+    },
+    {
+      id: "replug",
+      title: "RePLUG: Retrieval for Black‑Box LLMs (Format and Plug)",
+      excerpt:
+        "Optimize retrieval selection and prompt packaging for closed LLMs. Improve utility without changing the model.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "RePLUG", "Black‑box", "Prompting"],
+      slug: "replug",
+    },
+    {
+      id: "atlas",
+      title: "ATLAS: Large‑Scale Retrieval‑Augmented Pretraining",
+      excerpt:
+        "Jointly pretrain retriever + LM at scale to leverage external memory for few‑shot learning and robust recall.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "15 min",
+      tags: ["RAG", "ATLAS", "Pretraining", "Retriever"],
+      slug: "atlas",
     },
     {
       id: "1",
