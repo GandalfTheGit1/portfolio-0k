@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import Link from "next/link"
+import Head from "next/head"
 
 export default function FusionRAGPage() {
   const blogPost = {
@@ -10,7 +11,7 @@ export default function FusionRAGPage() {
     title: "Fusion RAG: Combining Multiple Data Sources for Smarter Retrieval",
     excerpt:
       "Fusion RAG merges multiple retrieval sources—vector, keyword, and API—to produce more comprehensive, bias-resistant answers.",
-    author: "Will",
+    author: "William Marrero Masferrer",
     date: "2025-11-01",
     readTime: "14 min",
     category: "IA",
@@ -82,6 +83,39 @@ export default function FusionRAGPage() {
 
   return (
     <main className="bg-slate-950 min-h-screen pt-32">
+      <Head>
+        <title>{blogPost.title}</title>
+        <meta name="description" content={blogPost.excerpt} />
+        <link rel="canonical" href={`https://william-marrero.vercel.app/blog/${blogPost.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={blogPost.title} />
+        <meta property="og:description" content={blogPost.excerpt} />
+        <meta property="og:url" content={`https://william-marrero.vercel.app/blog/${blogPost.slug}`} />
+        <meta property="og:image" content={`https://william-marrero.vercel.app/og/${blogPost.slug}.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blogPost.title} />
+        <meta name="twitter:description" content={blogPost.excerpt} />
+        <meta name="twitter:image" content={`https://william-marrero.vercel.app/og/${blogPost.slug}.png`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: blogPost.title,
+              description: blogPost.excerpt,
+              author: { "@type": "Person", name: blogPost.author },
+              datePublished: blogPost.date,
+              dateModified: blogPost.date,
+              url: `https://william-marrero.vercel.app/blog/${blogPost.slug}`,
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `https://william-marrero.vercel.app/blog/${blogPost.slug}`,
+              },
+            }),
+          }}
+        />
+      </Head>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-slate-900 to-slate-950 z-0"></div>
 
       <article className="container mx-auto px-6 max-w-3xl relative z-10 pb-20">
@@ -167,6 +201,21 @@ export default function FusionRAGPage() {
             </motion.section>
           ))}
         </motion.div>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-8 mb-8"
+        >
+          <h2 className="text-2xl font-bold text-white mb-4">Artículos relacionados</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/blog/multi-source-rag" className="text-indigo-400 hover:text-indigo-300">Multi-Source RAG</Link>
+            <Link href="/blog/contextual-rag" className="text-indigo-400 hover:text-indigo-300">Contextual RAG</Link>
+            <Link href="/blog/standard-rag" className="text-indigo-400 hover:text-indigo-300">Standard RAG</Link>
+          </div>
+        </motion.section>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}

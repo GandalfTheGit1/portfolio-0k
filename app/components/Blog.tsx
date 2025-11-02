@@ -81,6 +81,61 @@ export default function Blog() {
       slug: "agentic-rag",
     },
     {
+      id: "self-rag",
+      title: "Self-RAG: Retrieve, Generate, Critique for Higher Factuality",
+      excerpt:
+        "Self-RAG lets the model decide when to retrieve and critique its output to improve factuality and control.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Self-critique", "Reflection", "Verifier"],
+      slug: "self-rag",
+    },
+    {
+      id: "interactive-rag",
+      title: "Interactive RAG: Conversational Retrieval for Live Assistants",
+      excerpt:
+        "Interactive RAG integrates retrieval into multi-turn conversations and adapts with user feedback.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "12 min",
+      tags: ["RAG", "Chatbots", "Conversation", "Memory"],
+      slug: "interactive-rag",
+    },
+    {
+      id: "contextual-rag",
+      title: "Contextual RAG: Context-Preserved Retrieval that Finds What Matters",
+      excerpt:
+        "Contextual RAG augments chunks with surrounding context and uses hybrid retrieval + reranking to boost accuracy.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "Contextual Embeddings", "Hybrid", "Rerank"],
+      slug: "contextual-rag",
+    },
+    {
+      id: "multi-source-rag",
+      title: "Multi-Source RAG: Integrate Diverse Knowledge Bases and Modalities",
+      excerpt:
+        "Retrieve from several sources or modalities and fuse evidence to answer complex queries.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "Fusion", "Multimodal", "Benchmarks"],
+      slug: "multi-source-rag",
+    },
+    {
+      id: "hierarchical-rag",
+      title: "Hierarchical RAG: Top-Down Indexing for Large Corpora",
+      excerpt:
+        "Use multi-level indexes to narrow retrieval efficiently and preserve context across large corpora.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "12 min",
+      tags: ["RAG", "Hierarchy", "Indexing", "Scaling"],
+      slug: "hierarchical-rag",
+    },
+    {
       id: "1",
       title: "Automatización de Procesos con LangChain",
       excerpt:
@@ -89,6 +144,7 @@ export default function Blog() {
       category: "IA",
       readTime: "8 min",
       tags: ["langchain", "ai", "automatización"],
+      slug: "automatizacion-de-procesos-con-langchain",
     },
     {
       id: "2",
@@ -99,6 +155,7 @@ export default function Blog() {
       category: "Frontend",
       readTime: "10 min",
       tags: ["nextjs", "react", "web development"],
+      slug: "nextjs-15-mejores-practicas",
     },
     {
       id: "3",
@@ -109,6 +166,7 @@ export default function Blog() {
       category: "Backend",
       readTime: "12 min",
       tags: ["sistemas internos", "arquitectura", "escalabilidad"],
+      slug: "construir-sistemas-internos-escalables",
     },
     {
       id: "4",
@@ -118,6 +176,7 @@ export default function Blog() {
       category: "Base de Datos",
       readTime: "9 min",
       tags: ["supabase", "postgresql", "base de datos"],
+      slug: "supabase-vs-otras-soluciones",
     },
     {
       id: "5",
@@ -128,6 +187,7 @@ export default function Blog() {
       category: "Frontend",
       readTime: "11 min",
       tags: ["react", "server components", "innovación"],
+      slug: "react-server-components-futuro-del-frontend",
     },
     {
       id: "6",
@@ -138,6 +198,7 @@ export default function Blog() {
       category: "Automatización",
       readTime: "7 min",
       tags: ["n8n", "no-code", "workflows"],
+      slug: "n8n-automatizacion-sin-codigo",
     },
   ]
 

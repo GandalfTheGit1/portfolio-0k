@@ -5,70 +5,57 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 import Head from "next/head"
 
-export default function AgenticRAGPage() {
+export default function StandardRAGPage() {
   const blogPost = {
-    slug: "agentic-rag",
-    title: "Agentic RAG: Embedding RAG Within Deliberative AI Agents",
+    slug: "standard-rag",
+    title: "Standard RAG: The Foundation of Retrieval-Augmented Generation",
     excerpt:
-      "Learn how to embed RAG within deliberative AI agents that autonomously plan their retrieval steps and refine answers through reasoning.",
+      "Understand Standard RAG — the foundation of modern retrieval-augmented generation. Learn how to build it in N8N, where it shines, and its limitations.",
     author: "William Marrero Masferrer",
     date: "2025-11-01",
-    readTime: "15 min",
+    readTime: "12 min",
     category: "IA",
-    tags: ["RAG", "Agents", "ReAct", "Autonomous", "Multi-Step"],
+    tags: ["RAG", "AI", "N8N", "Vector Database", "BM25"],
     content: [
       {
         type: "section",
         id: "tldr",
         title: "TL;DR",
         content:
-          "Agentic RAG embeds RAG within a deliberative AI agent that plans its own retrieval steps. Use Cases: Dynamic, multi-step tasks like research assistants, coding helpers that fetch libraries/docs, planning tools, or any workflow where the query evolves. The agent iteratively refines its query, self-corrects, and uses external tools before finalizing the answer.",
+          "Standard RAG pairs an LLM with a retriever (often a vector DB) to ground answers in external documents, reducing hallucinations and enabling fresh, domain-specific knowledge.",
       },
       {
         type: "section",
         id: "definition",
-        title: "What Is Agentic RAG?",
+        title: "What Is Standard RAG?",
         content:
-          "Agentic RAG refers to adding AI agents that control retrieval. The LLM acts as a planner that decides when and what to retrieve, rather than having a fixed retrieval pipeline. It maintains memory of past answers and decides when to call retrievers or tools.",
+          "A retrieve-then-generate pipeline: split text, embed chunks, store in a vector index, perform similarity (or hybrid) search for a query, then pass retrieved context + question to the LLM for an answer.",
       },
       {
         type: "section",
         id: "use-cases",
-        title: "When to Use Agentic RAG",
+        title: "When to Use Standard RAG",
         isList: true,
         items: [
-          "Dynamic, multi-step research tasks where the query evolves.",
-          "Coding assistants that fetch libraries and documentation on demand.",
-          "Planning tools and multi-turn customer support scenarios.",
-          "Any workflow where the AI needs to reason about what information is needed next.",
+          "Open-domain QA and document search",
+          "Customer support chatbots grounded in KBs",
+          "Research assistants requiring up-to-date facts",
+          "Legal/medical Q&A where citations are needed",
         ],
       },
       {
         type: "section",
         id: "workflow",
-        title: "Building Agentic RAG in N8N",
+        title: "Building Standard RAG in N8N",
         isOrdered: true,
         isList: true,
         items: [
-          "Initialize the workflow with a prompt asking the LLM what information it needs.",
-          "Use a Loop node to repeat the process.",
-          "The LLM decides: Should I retrieve? Which tool should I use?",
-          "Execute the appropriate API call or database query.",
-          "Feed results back to the LLM with the question: What information do I need next?",
-          "Use If/Switch nodes to route based on LLM reasoning.",
-          "Continue until the LLM determines it has sufficient information to answer.",
-        ],
-      },
-      {
-        type: "section",
-        id: "patterns",
-        title: "Implementation Patterns",
-        isList: true,
-        items: [
-          "ReAct (Reasoning + Acting): Agent thinks through steps, then acts.",
-          "Chain-of-thought reasoning: Instruct system to retrieve via explicit reasoning.",
-          "Tool-use agents: Maintain a toolkit and let the agent decide which to call.",
-          "Memory-augmented agents: Track past queries and answers to avoid redundant retrievals.",
+          "Preprocess: split documents into chunks (Function/Built-in nodes)",
+          "Embed chunks and store in a vector DB (e.g., Chroma, Pinecone)",
+          "On query: compute embedding and run top-K similarity search",
+          "Optionally fuse with BM25/hybrid ranking or rerank",
+          "Concatenate top results into prompt and call LLM",
+          "Return answer with citations; log for evaluation",
         ],
       },
       {
@@ -76,7 +63,19 @@ export default function AgenticRAGPage() {
         id: "strengths",
         title: "Strengths & Weaknesses",
         content:
-          "Strengths: Highly flexible and autonomous, can iteratively refine queries, handles complex workflows by reasoning, can correct itself and adjust strategy. Weaknesses: Hard to control and debug, performance depends on agent reasoning, may loop indefinitely or go off-track, slower and costlier due to multiple steps, safety and sandboxing concerns.",
+          "Strengths: accesses fresh domain data without training, reduces hallucinations, simple and widely applicable. Weaknesses: hinges on retrieval quality and index freshness; too many/irrelevant chunks can harm results.",
+      },
+      {
+        type: "section",
+        id: "patterns",
+        title: "Implementation Patterns",
+        isList: true,
+        items: [
+          "Hybrid retrieval (Embeddings + BM25) and Reciprocal Rank Fusion",
+          "Reranking top candidates with an LLM or learned reranker",
+          "Context compression to fit token limits",
+          "Citation formatting and logging for audits",
+        ],
       },
       {
         type: "section",
@@ -84,11 +83,10 @@ export default function AgenticRAGPage() {
         title: "Metrics to Track",
         isList: true,
         items: [
-          "Success rate on goals — did the agent answer correctly?",
-          "Number of steps to solution — is it efficient?",
-          "Time and cost per query — what's the overhead?",
-          "Loop count — does it get stuck looping?",
-          "Tool usage patterns — which retrievers/APIs does it favor?",
+          "Retrieval precision/recall and hit rate",
+          "Answer accuracy (e.g., F1 on QA sets)",
+          "Factuality/hallucination rate",
+          "End-to-end latency and token cost",
         ],
       },
     ],
@@ -229,11 +227,9 @@ export default function AgenticRAGPage() {
         >
           <h2 className="text-2xl font-bold text-white mb-4">Artículos relacionados</h2>
           <div className="flex flex-wrap gap-3">
-            <Link href="/blog/react" className="hidden" aria-hidden="true" />
-            <Link href="/blog/standard-rag" className="text-indigo-400 hover:text-indigo-300">Standard RAG</Link>
-            <Link href="/blog/react" className="hidden" aria-hidden="true" />
-            <Link href="/blog/self-rag" className="text-indigo-400 hover:text-indigo-300">Self-RAG</Link>
-            <Link href="/blog/interactive-rag" className="text-indigo-400 hover:text-indigo-300">Interactive RAG</Link>
+            <Link href="/blog/corrective-rag" className="text-indigo-400 hover:text-indigo-300">Corrective RAG</Link>
+            <Link href="/blog/contextual-rag" className="text-indigo-400 hover:text-indigo-300">Contextual RAG</Link>
+            <Link href="/blog/multi-source-rag" className="text-indigo-400 hover:text-indigo-300">Multi-Source RAG</Link>
           </div>
         </motion.section>
 
