@@ -160,8 +160,7 @@
     },
     "location": {
       "title": "Location",
-      "connect": "View on map",
-      "place":"The Havana, Cuba"
+      "connect": "View on map"
     }
   },
   "projects": {

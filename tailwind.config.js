@@ -106,4 +106,7 @@ module.exports = {
     "bg-green-500",
     "bg-pink-500",
   ],
+  corePlugins: {
+    preflight: true,
+  },
 }

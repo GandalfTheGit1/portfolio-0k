@@ -142,8 +142,7 @@
     },
     "location": {
       "title": "Ubicación",
-      "connect": "Ver en el mapa",
-      "place":"La Habana, Cuba"
+      "connect": "Ver en el mapa"
     }
   },
   "projects": {

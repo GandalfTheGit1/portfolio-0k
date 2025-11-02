@@ -13,8 +13,7 @@ import {
   MessageSquare,
   Cpu,
   ChevronUp,
-  BookOpen,
-  Award,
+  FileText,
 } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 import { useI18n } from "@/app/components/I18nProvider"
@@ -35,6 +34,7 @@ export default function Navigation() {
     // { id: "research", label: t("nav.research"), icon: <BookOpen className="w-5 h-5" /> },
     // { id: "certifications", label: t("nav.certifications"), icon: <Award className="w-5 h-5" /> },
     { id: "projects", label: t("nav.projects"), icon: <Cpu className="w-5 h-5" /> },
+    { id: "blog", label: t("nav.blog"), icon: <FileText className="w-5 h-5" /> },
     { id: "languages", label: t("nav.languages"), icon: <Code className="w-5 h-5 rotate-90" /> },
     { id: "contact", label: t("nav.contact"), icon: <MessageSquare className="w-5 h-5" /> },
   ]
@@ -72,7 +72,7 @@ export default function Navigation() {
     handleScroll()
 
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [navItems])
+  }, []) // Removed navItems from the dependency array
 
   const handleNavClick = (id: string) => {
     smoothScrollTo(id)

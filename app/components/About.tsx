@@ -45,18 +45,8 @@ const ParticleField = () => {
             opacity: config.opacity,
           }}
           animate={{
-            x: [
-              config.x + "%",
-              (config.x + 20) % 100 + "%",
-              (config.x + 40) % 100 + "%",
-              config.x + "%",
-            ],
-            y: [
-              config.y + "%",
-              (config.y + 30) % 100 + "%",
-              (config.y + 60) % 100 + "%",
-              config.y + "%",
-            ],
+            x: [config.x + "%", ((config.x + 20) % 100) + "%", ((config.x + 40) % 100) + "%", config.x + "%"],
+            y: [config.y + "%", ((config.y + 30) % 100) + "%", ((config.y + 60) % 100) + "%", config.y + "%"],
           }}
           transition={{
             duration: config.duration,
@@ -111,51 +101,52 @@ export default function About() {
       <ParticleField />
 
       <div className="container mx-auto px-6 relative z-10">
-        <SectionHeading title={t("about.sectionTitle")} />
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <SectionHeading title={t("about.sectionTitle")} />
+        </motion.div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div
             className="md:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50, y: 50 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-slate-900/80 backdrop-blur-md p-8 rounded-2xl border border-indigo-500/20">
               <div className="flex items-center mb-6">
                 <div className="p-2 rounded-full bg-indigo-500/20 mr-4">
                   <Brain className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white font-display">
-                  {t("about.roleHeading")}
-                </h3>
+                <h3 className="text-2xl font-bold text-white font-display">{t("about.roleHeading")}</h3>
               </div>
 
-              <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                {t("about.p1")}
-              </p>
-              <p className="text-xl text-slate-300 leading-relaxed">
-                {t("about.p2")}
-              </p>
+              <p className="text-xl text-slate-300 leading-relaxed mb-6">{t("about.p1")}</p>
+              <p className="text-xl text-slate-300 leading-relaxed">{t("about.p2")}</p>
             </div>
           </motion.div>
 
           <motion.div
             className="md:w-1/2 grid grid-cols-2 gap-6"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 50, y: 50 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
                 className="bg-slate-900/80 backdrop-blur-md p-6 rounded-2xl border border-indigo-500/20 group"
                 whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
               >
                 <div className="bg-slate-800 p-3 rounded-xl inline-block mb-4 group-hover:bg-indigo-500/20 transition-colors duration-300">
                   {skill.icon}

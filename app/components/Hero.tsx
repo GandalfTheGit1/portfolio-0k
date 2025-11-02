@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Github as GitHub, Linkedin, Mail, Cloud } from "lucide-react"
 import { smoothScrollTo } from "@/utils/smoothScroll"
 import { useI18n } from "@/app/components/I18nProvider"
@@ -255,16 +255,27 @@ export default function Hero() {
   const { t, locale } = useI18n()
   const cvHref = locale === "es" ? "/cv-william-marrero-es.pdf" : "/cv-william-marrero-en.pdf"
   const cvDownloadName = locale === "es" ? "William-Marrero-CV-ES.pdf" : "William-Marrero-CV-EN.pdf"
+
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  })
+
+  const gridY = useTransform(scrollYProgress, [0, 1], [0, 100])
+  const codeEditorY = useTransform(scrollYProgress, [0, 1], [0, 50])
+  const codeEditorScale = useTransform(scrollYProgress, [0, 1], [1, 0.95])
+
   return (
     <section
+      ref={containerRef}
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-slate-950 pt-20"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900 to-slate-950 z-0"></div>
 
-      {/* Grid pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <motion.div className="absolute inset-0 opacity-10" style={{ y: gridY }}>
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -273,7 +284,7 @@ export default function Hero() {
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center">
         {/* Text content */}
@@ -390,12 +401,13 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Code Editor Animation */}
+        {/* Code Editor Animation with Parallax */}
         <motion.div
           className="lg:w-1/2 w-full"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
+          style={{ y: codeEditorY, scale: codeEditorScale }}
         >
           <CodeEditorAnimation />
         </motion.div>

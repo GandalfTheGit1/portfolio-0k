@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "deploy": "git add . && git commit -m \"Update portfolio\" && git push origin main",
+    "deploy-msg": "npm run deploy",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "type-check": "tsc --noEmit",
-    "deploy": "git add . && git commit -m \"Update portfolio\" && git push origin main",
-    "deploy-msg": "npm run deploy"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
