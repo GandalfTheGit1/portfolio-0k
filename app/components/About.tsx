@@ -1,10 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Code, Database, Server, Brain, Clipboard, Settings } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import { useI18n } from "@/app/components/I18nProvider"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 // Particle animation component
 const ParticleField = () => {
@@ -61,6 +61,14 @@ const ParticleField = () => {
 
 export default function About() {
   const { t } = useI18n()
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end center"],
+  })
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [100, 0])
+
   const skills = [
     {
       icon: <Code className="w-8 h-8 text-indigo-400" />,
@@ -95,9 +103,11 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-slate-950">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"></div>
+    <section id="about" className="py-20 relative overflow-hidden bg-slate-950" ref={sectionRef}>
+      <motion.div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/10 via-slate-900 to-slate-950 z-0"
+        style={{ y: translateY }}
+      />
       <ParticleField />
 
       <div className="container mx-auto px-6 relative z-10">

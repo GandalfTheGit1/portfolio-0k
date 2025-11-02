@@ -37,6 +37,50 @@ export default function Blog() {
       slug: "standard-rag",
     },
     {
+      id: "fusion-rag",
+      title: "Fusion RAG: Combining Multiple Data Sources for Smarter Retrieval",
+      excerpt:
+        "Fusion RAG merges multiple retrieval sources—vector, keyword, and API—to produce more comprehensive, bias-resistant answers.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "AI", "Multi-Source", "N8N"],
+      slug: "fusion-rag",
+    },
+    {
+      id: "corrective-rag",
+      title: "Corrective RAG: Making LLMs Trustworthy Through Feedback Loops",
+      excerpt:
+        "Learn how Corrective RAG adds self-checking feedback loops to Retrieval-Augmented Generation workflows, reducing hallucinations and improving factual reliability.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "Verification", "Feedback", "LLM"],
+      slug: "corrective-rag",
+    },
+    {
+      id: "speculative-rag",
+      title: "Speculative RAG: Speed and Accuracy with Specialist–Generalist LLMs",
+      excerpt:
+        "Learn how Speculative RAG uses a small and a large LLM together to balance latency, cost, and accuracy in retrieval-augmented systems.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "12 min",
+      tags: ["RAG", "Performance", "LLM", "Optimization"],
+      slug: "speculative-rag",
+    },
+    {
+      id: "agentic-rag",
+      title: "Agentic RAG: Embedding RAG Within Deliberative AI Agents",
+      excerpt:
+        "Learn how to embed RAG within deliberative AI agents that autonomously plan their retrieval steps and refine answers through reasoning.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "15 min",
+      tags: ["RAG", "Agents", "ReAct", "Autonomous"],
+      slug: "agentic-rag",
+    },
+    {
       id: "1",
       title: "Automatización de Procesos con LangChain",
       excerpt:
