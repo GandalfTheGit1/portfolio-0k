@@ -83,8 +83,7 @@ export default function Blog() {
     {
       id: "feedback-based-rag",
       title: "Feedback-Based RAG: Self-Improving Retrieval with User Signals",
-      excerpt:
-        "Use explicit/implicit feedback to rerank, retrain, and continuously improve RAG quality.",
+      excerpt: "Use explicit/implicit feedback to rerank, retrain, and continuously improve RAG quality.",
       date: "2025-11-01",
       category: "IA",
       readTime: "13 min",
@@ -105,8 +104,7 @@ export default function Blog() {
     {
       id: "interactive-rag",
       title: "Interactive RAG: Conversational Retrieval for Live Assistants",
-      excerpt:
-        "Interactive RAG integrates retrieval into multi-turn conversations and adapts with user feedback.",
+      excerpt: "Interactive RAG integrates retrieval into multi-turn conversations and adapts with user feedback.",
       date: "2025-11-01",
       category: "IA",
       readTime: "12 min",
@@ -127,8 +125,7 @@ export default function Blog() {
     {
       id: "multi-source-rag",
       title: "Multi-Source RAG: Integrate Diverse Knowledge Bases and Modalities",
-      excerpt:
-        "Retrieve from several sources or modalities and fuse evidence to answer complex queries.",
+      excerpt: "Retrieve from several sources or modalities and fuse evidence to answer complex queries.",
       date: "2025-11-01",
       category: "IA",
       readTime: "13 min",
@@ -138,8 +135,7 @@ export default function Blog() {
     {
       id: "adversarial-rag",
       title: "Adversarial RAG: Harden Your System Against Injection & Poisoning",
-      excerpt:
-        "Defend RAG against prompt injection, document poisoning, and exfiltration with layered defenses.",
+      excerpt: "Defend RAG against prompt injection, document poisoning, and exfiltration with layered defenses.",
       date: "2025-11-01",
       category: "IA",
       readTime: "14 min",
@@ -149,8 +145,7 @@ export default function Blog() {
     {
       id: "hierarchical-rag",
       title: "Hierarchical RAG: Top-Down Indexing for Large Corpora",
-      excerpt:
-        "Use multi-level indexes to narrow retrieval efficiently and preserve context across large corpora.",
+      excerpt: "Use multi-level indexes to narrow retrieval efficiently and preserve context across large corpora.",
       date: "2025-11-01",
       category: "IA",
       readTime: "12 min",
@@ -160,8 +155,7 @@ export default function Blog() {
     {
       id: "multi-pass-rag",
       title: "Multi-Pass RAG: Iterative Retrieval That Boosts Accuracy",
-      excerpt:
-        "Run 2–3 retrieval→generation passes. First pass casts a wide net; later passes rerank and refine.",
+      excerpt: "Run 2–3 retrieval→generation passes. First pass casts a wide net; later passes rerank and refine.",
       date: "2025-11-01",
       category: "IA",
       readTime: "12 min",
@@ -204,8 +198,7 @@ export default function Blog() {
     {
       id: "raptor",
       title: "RAPTOR: Tree-Organized Retrieval with Recursive Summaries",
-      excerpt:
-        "Build hierarchical summaries and retrieve across levels for long documents and theme-based queries.",
+      excerpt: "Build hierarchical summaries and retrieve across levels for long documents and theme-based queries.",
       date: "2025-11-01",
       category: "IA",
       readTime: "14 min",
@@ -312,20 +305,58 @@ export default function Blog() {
     },
   ]
 
-  const categories = ["IA", "Frontend", "Backend", "Base de Datos", "Automatización"]
+  const categories = ["IA", "Frontend", "Backend", "Base de Datos", "Automatización", "Startups"]
 
   // Function to shuffle array
   const shuffleArray = (array: any[]) => {
-    const newArray = [...array];
+    const newArray = [...array]
     for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[newArray[i], newArray[j]] = [newArray[j], newArray[i]]
     }
-    return newArray;
-  };
+    return newArray
+  }
+
+  const startupPosts: BlogPost[] = [
+    {
+      id: "7",
+      title: "Consejos para Levantar tu Primera Ronda de Inversión",
+      excerpt:
+        "Guía práctica sobre cómo prepararse para levantar capital semilla. Errores comunes y qué buscan los inversores.",
+      date: "2024-12-20",
+      category: "Startups",
+      readTime: "10 min",
+      tags: ["fundraising", "startups", "inversión"],
+      slug: "levantar-primera-ronda-inversion",
+    },
+    {
+      id: "8",
+      title: "MVP: Cómo Validar tu Idea de Negocio Rápidamente",
+      excerpt:
+        "Aprende a construir un Minimum Viable Product que te ayude a validar tu idea antes de invertir demasiados recursos.",
+      date: "2024-12-18",
+      category: "Startups",
+      readTime: "9 min",
+      tags: ["mvp", "startup", "validación"],
+      slug: "mvp-validar-idea-negocio",
+    },
+    {
+      id: "9",
+      title: "De Solopreneur a Startup: Escalando tu Negocio",
+      excerpt: "Transición del trabajo freelance a una startup con equipo. Cómo contratar y delegar efectivamente.",
+      date: "2024-12-12",
+      category: "Startups",
+      readTime: "11 min",
+      tags: ["equipo", "scaling", "gestión"],
+      slug: "solopreneur-a-startup-escalando",
+    },
+  ]
+
+  // Combine all posts
+  const allBlogPosts = [...blogPosts, ...startupPosts]
 
   // Filter and get 6 random posts
-  const filteredPosts = blogPosts
+  const filteredPosts = allBlogPosts
     .filter((post) => {
       const matchesCategory = !activeCategory || post.category === activeCategory
       const matchesSearch =
@@ -334,7 +365,7 @@ export default function Blog() {
         post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       return matchesCategory && matchesSearch
     })
-    .slice(0, 6); // Take only 6 random posts
+    .slice(0, 6) // Take only 6 random posts
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
