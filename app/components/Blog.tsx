@@ -314,15 +314,27 @@ export default function Blog() {
 
   const categories = ["IA", "Frontend", "Backend", "Base de Datos", "Automatización"]
 
-  // Filter posts
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = !activeCategory || post.category === activeCategory
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-    return matchesCategory && matchesSearch
-  })
+  // Function to shuffle array
+  const shuffleArray = (array: any[]) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
+  // Filter and get 6 random posts
+  const filteredPosts = blogPosts
+    .filter((post) => {
+      const matchesCategory = !activeCategory || post.category === activeCategory
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      return matchesCategory && matchesSearch
+    })
+    .slice(0, 6); // Take only 6 random posts
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
