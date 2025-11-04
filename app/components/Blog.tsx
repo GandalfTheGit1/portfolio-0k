@@ -239,6 +239,61 @@ export default function Blog() {
       slug: "atlas",
     },
     {
+      id: "reranking-rag",
+      title: "Re-Ranking RAG: Two-Stage Retrieval for Maximum Relevance",
+      excerpt:
+        "Re-Ranking uses a specialized cross-encoder model to filter initial retrievals, keeping only the most relevant chunks for the LLM while maintaining context coverage.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "13 min",
+      tags: ["RAG", "Re-ranking", "Cross-encoder", "Retrieval"],
+      slug: "reranking-rag",
+    },
+    {
+      id: "query-expansion",
+      title: "Query Expansion: Reformulating Questions for Better Retrieval",
+      excerpt:
+        "Query Expansion uses an LLM to reformulate and enhance user queries before vector search, improving retrieval accuracy by adding relevant details and context.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "12 min",
+      tags: ["RAG", "Query", "Expansion", "Preprocessing"],
+      slug: "query-expansion",
+    },
+    {
+      id: "late-chunking",
+      title: "Late Chunking: Full-Document Context for Superior Embeddings",
+      excerpt:
+        "Late Chunking applies embeddings to the entire document first, then chunks the token embeddings, preserving document context in every chunk.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "15 min",
+      tags: ["RAG", "Chunking", "Embeddings", "Advanced"],
+      slug: "late-chunking",
+    },
+    {
+      id: "knowledge-graphs",
+      title: "Knowledge Graphs: Entity Relationships for Interconnected Retrieval",
+      excerpt:
+        "Knowledge Graphs combine vector search with graph databases to enable relationship-aware retrieval, perfect for interconnected data like entities, topics, and their connections.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Knowledge Graphs", "Graph DB", "Entities"],
+      slug: "knowledge-graphs",
+    },
+    {
+      id: "fine-tuned-embeddings",
+      title: "Fine-Tuned Embeddings: Domain-Specific Retrieval at Scale",
+      excerpt:
+        "Fine-tune embedding models on domain-specific data to achieve 5-10% accuracy gains, allowing smaller models to outperform generic ones in specialized tasks.",
+      date: "2025-11-01",
+      category: "IA",
+      readTime: "14 min",
+      tags: ["RAG", "Embeddings", "Fine-tuning", "ML"],
+      slug: "fine-tuned-embeddings",
+    },
+    {
       id: "1",
       title: "Automatización de Procesos con LangChain",
       excerpt:
