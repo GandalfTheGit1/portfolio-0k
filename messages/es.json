@@ -5,6 +5,7 @@
     "experience": "Experiencia",
     "education": "Educación",
     "projects": "Proyectos",
+    "blog": "Blog",
     "languages": "Idiomas",
     "contact": "Contacto"
   },
@@ -199,7 +200,7 @@
         "techStack": "React, Nest.js, MongoDB, PWA, AWS EC2",
         "github": "https://github.com/GandalfTheGit1/PerxinsFront.git",
         "type": "public",
-        "demo":"https://perxins-demo.vercel.app",
+        "demo": "https://perxins-demo.vercel.app",
         "category": "Web"
       },
       {
@@ -207,7 +208,7 @@
         "description": "Tienda de comercio electrónico para agencia de envíos a Cuba desde EE.UU. con catálogo de productos y panel de administración.",
         "techStack": "JavaScript, CSS, HTML",
         "type": "private",
-        "demo":"https://sos-combos.vercel.app",
+        "demo": "https://sos-combos.vercel.app",
         "github": "https://github.com/GandalfTheGit1/SOS_Combos",
         "category": "E-commerce"
       },
@@ -234,7 +235,7 @@
         "type": "private",
         "demo": "Coming",
         "category": "Mobile"
-      } 
+      }
     ]
   }
 }

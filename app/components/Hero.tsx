@@ -263,8 +263,8 @@ export default function Hero() {
   })
 
   const gridY = useTransform(scrollYProgress, [0, 1], [0, 100])
-  const codeEditorY = useTransform(scrollYProgress, [0, 1], [0, 50])
-  const codeEditorScale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2])
+  const codeEditorY = useTransform(scrollYProgress, [0, 1], [0, -50])
+  const codeEditorScale = useTransform(scrollYProgress, [0, 1], [0.8, 1.3])
 
   return (
     <section
@@ -403,7 +403,7 @@ export default function Hero() {
 
         {/* Code Editor Animation with Parallax */}
         <motion.div
-          className="lg:w-1/2 w-full"
+          className="lg:w-1/2 w-full flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
