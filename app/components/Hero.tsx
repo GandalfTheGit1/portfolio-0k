@@ -264,7 +264,7 @@ export default function Hero() {
 
   const gridY = useTransform(scrollYProgress, [0, 1], [0, 100])
   const codeEditorY = useTransform(scrollYProgress, [0, 1], [0, 50])
-  const codeEditorScale = useTransform(scrollYProgress, [0, 1], [1, 0.95])
+  const codeEditorScale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2])
 
   return (
     <section
