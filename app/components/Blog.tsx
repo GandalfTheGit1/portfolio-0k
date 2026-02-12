@@ -26,6 +26,16 @@ export default function Blog() {
   // Mock blog posts - replace with real data from CMS/API
   const blogPosts: BlogPost[] = [
     {
+      id: "economia-circular-industria",
+      title: "Economía Circular en la Industria: De la Teoría a la Implementación",
+      excerpt: "Mi experiencia como parte del proyecto CUBA CIRCULAR: implementando tecnologías alemanas para sostenibilidad industrial en Cuba.",
+      date: "2025-01-31",
+      category: "Finanzas",
+      readTime: "10 min",
+      tags: ["Sostenibilidad", "Economía Circular"],
+      slug: "economia-circular-industria",
+    },
+    {
       id: "standard-rag",
       title: "Standard RAG: The Foundation of Retrieval-Augmented Generation",
       excerpt:
@@ -360,7 +370,7 @@ export default function Blog() {
     },
   ]
 
-  const categories = ["IA", "Frontend", "Backend", "Base de Datos", "Automatización", "Startups"]
+  const categories = ["IA", "Frontend", "Backend", "Base de Datos", "Automatización", "Startups", "Finanzas"]
 
   // Function to shuffle array
   const shuffleArray = (array: any[]) => {
@@ -410,17 +420,23 @@ export default function Blog() {
   // Combine all posts
   const allBlogPosts = [...blogPosts, ...startupPosts]
 
-  // Filter and get 6 random posts
-  const filteredPosts = allBlogPosts
+  // Sort posts by date to get the most recent first
+  const sortedPosts = allBlogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  
+  // Find Fusion RAG post to be featured, fallback to most recent
+  const featuredPost = sortedPosts.find(post => post.id === "fusion-rag") || sortedPosts[0]
+  
+  // Filter and get remaining posts (excluding featured)
+  const filteredPosts = sortedPosts
     .filter((post) => {
       const matchesCategory = !activeCategory || post.category === activeCategory
       const matchesSearch =
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
-      return matchesCategory && matchesSearch
+      return matchesCategory && matchesSearch && post.id !== featuredPost.id
     })
-    .slice(0, 6) // Take only 6 random posts
+    .slice(0, 5) // Take 5 remaining posts to show 6 total
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -499,72 +515,152 @@ export default function Blog() {
         </motion.div>
 
         {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="space-y-8 mb-12">
           <AnimatePresence>
-            {filteredPosts.length > 0 ? (
-              filteredPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group bg-slate-900/80 backdrop-blur-md rounded-xl border border-indigo-500/20 overflow-hidden hover:border-indigo-500/40 transition-all duration-300 flex flex-col h-full"
-                >
-                  {/* Category Badge */}
-                  <div className="px-6 pt-6 pb-0">
-                    <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-semibold rounded-full border border-indigo-500/30">
-                      {post.category}
-                    </span>
-                  </div>
+            {/* Featured Article */}
+            {featuredPost && (!activeCategory || featuredPost.category === activeCategory) && 
+              (!searchQuery || 
+                featuredPost.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                featuredPost.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                featuredPost.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))) && (
+              <motion.article
+                key={`featured-${featuredPost.id}`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="group bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-md rounded-2xl border border-indigo-500/30 overflow-hidden hover:border-indigo-500/50 transition-all duration-300 relative"
+              >
+                {/* Featured Badge */}
+                <div className="absolute top-6 right-6 z-10">
+                  <span className="inline-block px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-bold rounded-full shadow-lg">
+                    Featured Article
+                  </span>
+                </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors line-clamp-2">
-                      {post.title}
-                    </h3>
+                <div className="grid md:grid-cols-2 gap-8 p-8">
+                  {/* Content Section */}
+                  <div className="flex flex-col justify-center">
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-sm font-semibold rounded-full border border-indigo-500/30">
+                        {featuredPost.category}
+                      </span>
+                    </div>
 
-                    <p className="text-slate-300 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-indigo-300 transition-colors">
+                      {featuredPost.title}
+                    </h2>
+
+                    <p className="text-slate-300 text-lg mb-6 line-clamp-4">{featuredPost.excerpt}</p>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.slice(0, 2).map((tag) => (
-                        <span key={tag} className="text-xs text-slate-400 bg-slate-800/50 px-2 py-1 rounded">
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {featuredPost.tags.slice(0, 4).map((tag) => (
+                        <span key={tag} className="text-sm text-slate-400 bg-slate-800/50 px-3 py-1 rounded-full">
                           #{tag}
                         </span>
                       ))}
                     </div>
 
                     {/* Footer */}
-                    <div className="mt-auto pt-4 border-t border-slate-800">
-                      <div className="flex items-center justify-between mb-4 text-xs text-slate-400">
-                        <div className="flex items-center gap-4">
-                          <span className="flex items-center gap-1">
-                            <Calendar className="w-3 h-3" />
-                            {formatDate(post.date)}
-                          </span>
-                          <span>{post.readTime}</span>
-                        </div>
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-700">
+                      <div className="flex items-center gap-6 text-sm text-slate-400">
+                        <span className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          {formatDate(featuredPost.date)}
+                        </span>
+                        <span>{featuredPost.readTime}</span>
                       </div>
 
                       <motion.a
-                        href={`/blog/${post.slug}`}
-                        className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium"
+                        href={`/blog/${featuredPost.slug}`}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors"
                         whileHover={{ x: 5 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        Leer más <ArrowRight className="w-4 h-4" />
+                        Read Full Article <ArrowRight className="w-5 h-5" />
                       </motion.a>
                     </div>
                   </div>
-                </motion.article>
-              ))
-            ) : (
-              <motion.div className="col-span-full py-12 text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                <BookOpen className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-                <p className="text-slate-400">No se encontraron artículos. Intenta con otra búsqueda.</p>
-              </motion.div>
+
+                  {/* Visual Section */}
+                  <div className="flex items-center justify-center">
+                    <div className="w-full h-64 md:h-80 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-xl border border-indigo-500/20 flex items-center justify-center">
+                      <BookOpen className="w-24 h-24 text-indigo-400/50" />
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
             )}
+
+            {/* Regular Articles Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredPosts.length > 0 ? (
+                filteredPosts.map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group bg-slate-900/80 backdrop-blur-md rounded-xl border border-indigo-500/20 overflow-hidden hover:border-indigo-500/40 transition-all duration-300 flex flex-col h-full"
+                  >
+                    {/* Category Badge */}
+                    <div className="px-6 pt-6 pb-0">
+                      <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-semibold rounded-full border border-indigo-500/30">
+                        {post.category}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6 flex flex-col flex-1">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-300 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-slate-300 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {post.tags.slice(0, 2).map((tag) => (
+                          <span key={tag} className="text-xs text-slate-400 bg-slate-800/50 px-2 py-1 rounded">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Footer */}
+                      <div className="mt-auto pt-4 border-t border-slate-800">
+                        <div className="flex items-center justify-between mb-4 text-xs text-slate-400">
+                          <div className="flex items-center gap-4">
+                            <span className="flex items-center gap-1">
+                              <Calendar className="w-3 h-3" />
+                              {formatDate(post.date)}
+                            </span>
+                            <span>{post.readTime}</span>
+                          </div>
+                        </div>
+
+                        <motion.a
+                          href={`/blog/${post.slug}`}
+                          className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors text-sm font-medium"
+                          whileHover={{ x: 5 }}
+                        >
+                          Leer más <ArrowRight className="w-4 h-4" />
+                        </motion.a>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))
+              ) : (
+                <motion.div className="col-span-full py-12 text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                  <BookOpen className="w-12 h-12 text-slate-600 mx-auto mb-4" />
+                  <p className="text-slate-400">No se encontraron artículos. Intenta con otra búsqueda.</p>
+                </motion.div>
+              )}
+            </div>
           </AnimatePresence>
         </div>
       </div>

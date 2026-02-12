@@ -35,77 +35,94 @@
   "about": {
     "sectionTitle": "Sobre Mí",
     "roleHeading": "Desarrollador Fullstack & Especialista en Automatización",
-    "p1": "Desarrollador Fullstack con experiencia en sistemas internos, automatización de procesos empresariales y reparación de equipos informáticos. Especializado en React, Next.js, Nest.js, Supabase y tecnologías de IA.",
-    "p2": "Formación en Contabilidad y Finanzas con fuerte orientación a soluciones tecnológicas para negocios. Más de 8 proyectos desarrollados para gestión empresarial en áreas de envíos, exportaciones y retail.",
+    "p1": "Desarrollador Fullstack con experiencia en sistemas internos, automatización de procesos empresariales y gestión financiera. Especializado en React, Next.js, Nest.js, Supabase y tecnologías de IA.",
+    "p3": "Más de 8 proyectos desarrollados para gestión empresarial en áreas de envíos, exportaciones y retail, combinando conocimientos técnicos con visión de negocios.",
     "skills": {
-      "frontend": { "title": "Frontend", "desc": "React, Next.js, Tailwind CSS, JavaScript" },
+      "frontend": {
+        "title": "Frontend",
+        "desc": "React, Next.js, Tailwind CSS, JavaScript"
+      },
       "backend": { "title": "Backend", "desc": "Nest.js, Node.js, APIs REST" },
-      "db": { "title": "Base de Datos", "desc": "Supabase, PostgreSQL, MongoDB" },
-      "ai": { "title": "IA/Automatización", "desc": "LangChain, LangGraph, n8n, RAG" },
-      "business": { "title": "Negocios", "desc": "Contabilidad, Finanzas, Gestión" },
-      "other": { "title": "Otros", "desc": "React Native, Reparación Hardware" }
+      "db": {
+        "title": "Base de Datos",
+        "desc": "Supabase, PostgreSQL, MongoDB"
+      },
+      "ai": {
+        "title": "IA/Automatización",
+        "desc": "N8N, LangChain, LangGraph, RAG"
+      },
+      "business": {
+        "title": "Negocios",
+        "desc": "Marketing, Contabilidad, Gestión."
+      },
+      "finance": {
+        "title": "Finanzas y Gestión",
+        "desc": "Análisis Financiero, Gestión de Riesgo."
+      }
     }
   },
   "experience": {
     "sectionTitle": "Experiencia",
-    "freelance": {
-      "role": "Desarrollador Fullstack Freelance",
-      "company": "Proyectos Independientes",
-      "projects": [
-        {
-          "title": "🚀 Sistemas de Automatización Empresarial",
-          "description": "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados."
-        },
-        {
-          "title": "💼 Soluciones de Gestión Interna",
-          "description": "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros."
-        },
-        {
-          "title": "🤖 Integración de IA y LangChain",
-          "description": "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales."
-        }
-      ]
-    },
-    "hardwareSpecialist": {
-      "role": "Especialista en Reparación de Hardware",
-      "company": "Servicios Técnicos Independientes",
-      "projects": [
-        {
-          "title": "🔨 Diagnóstico y Reparación de Equipos",
-          "description": "Diagnóstico, reparación y mantenimiento de computadoras, laptops y equipos informáticos. Resolución de problemas de hardware y software para clientes particulares y pequeñas empresas."
-        },
-        {
-          "title": "💻 Soporte Técnico Integral",
-          "description": "Prestación de servicios de soporte técnico, instalación de sistemas operativos, configuración de redes y asesoramiento en compra de equipos informáticos."
-        }
-      ]
-    },
-    "education": {
-      "role": "Estudiante de Contabilidad y Finanzas",
-      "company": "Formación Académica",
-      "projects": [
-        {
-          "title": "📊 Fundamentos Empresariales",
-          "description": "Formación sólida en principios contables, análisis financiero y gestión empresarial. Base teórica que complementa el desarrollo de soluciones tecnológicas para negocios."
-        },
-        {
-          "title": "💡 Visión Integral de Negocios",
-          "description": "Desarrollo de comprensión profunda de procesos empresariales, lo que permite crear soluciones tecnológicas más efectivas y alineadas con objetivos comerciales."
-        }
-      ]
-    },
     "periods": {
-      "freelance": "2021 - Presente",
-      "hardwareSpecialist": "2020 - 2021",
-      "education": "2021 - 2025"
+      "2025": "2025",
+      "2024_2025": "2024 - 2025",
+      "2021_2023": "2021 - 2023",
+      "2020_2021": "2020 - 2021",
+      "2021_2025": "2021 - 2025",
+      "2021_Present": "2021 - Presente"
     },
-    "labels": {
-      "leadership": "Liderazgo"
+    "projectLeadership": {
+      "title": "Desarrollador Fullstack Freelance",
+      "description": "2021 - Presente · Proyectos Independientes",
+      "skills": [
+        "Sistemas de Automatización Empresarial",
+        "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados.",
+        "Soluciones de Gestión Interna",
+        "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros.",
+        "Integración de IA y LangChain",
+        "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales."
+      ]
+    },
+    "automationDevelopment": {
+      "title": "Especialista en Reparación de Hardware",
+      "description": "Servicios Técnicos Independientes",
+      "skills": [
+        "Diagnóstico y Reparación de Equipos",
+        "Diagnóstico, reparación y mantenimiento de computadoras, laptops y equipos informáticos. Resolución de problemas de hardware y software para clientes particulares y pequeñas empresas.",
+        "Soporte Técnico Integral",
+        "Prestación de servicios de soporte técnico, instalación de sistemas operativos, configuración de redes y asesoramiento en compra de equipos informáticos."
+      ]
+    },
+    "fullstackDevelopment": {
+      "title": "Analista Financiero",
+      "description": "Formación Académica - Gestión Empresarial",
+      "skills": [
+        "Fundamentos Empresariales",
+        "Formación sólida en principios contables, análisis financiero y gestión empresarial. Base teórica que complementa el desarrollo de soluciones tecnológicas para negocios."
+      ]
+    },
+    "financeTechnical": {
+      "title": "Desarrollador Fullstack Freelance",
+      "description": "Proyectos Empresariales",
+      "skills": [
+        "Sistemas de Automatización Empresarial",
+        "Desarrollo de más de 8 proyectos de automatización para empresas de envíos, exportaciones y retail. Implementación de workflows automatizados con n8n y sistemas de gestión personalizados.",
+        "Soluciones de Gestión Interna",
+        "Creación de sistemas internos para optimización de procesos empresariales, incluyendo gestión de inventarios, seguimiento de envíos y automatización de reportes financieros.",
+        "Integración de IA y LangChain",
+        "Implementación de soluciones de inteligencia artificial utilizando LangChain y LangGraph para automatización de procesos de atención al cliente y análisis de datos empresariales."
+      ]
     }
   },
   "education": {
     "sectionTitle": "Educación",
     "degrees": [
+      {
+        "degree": "Ciencias Informáticas",
+        "institution": "Universidad de Ciencias Informáticas",
+        "period": "2020 – 2021",
+        "additional": "Fundamentos de programación y desarrollo de software"
+      },
       {
         "degree": "Contabilidad y Finanzas",
         "institution": "Universidad de La Habana",
@@ -113,10 +130,22 @@
         "additional": "Formación en principios contables, análisis financiero y gestión empresarial"
       },
       {
-        "degree": "Ciencias Informáticas",
-        "institution": "Universidad de Ciencias Informáticas",
-        "period": "2020 – 2021",
-        "additional": "Fundamentos de programación y desarrollo de software"
+        "degree": "Design Thinking",
+        "institution": "Cámara de Comercio de Bogotá",
+        "period": "2023",
+        "additional": "Curso sobre metodologías de design thinking para innovación y resolución de problemas"
+      },
+      {
+        "degree": "Automatización para Investigación de Mercado",
+        "institution": "Universidad de Humboldt de Berlín",
+        "period": "2024",
+        "additional": "Curso especializado en técnicas y herramientas de automatización para investigación de mercado y análisis de datos"
+      },
+      {
+        "degree": "PostDoctorado en Economía Circular",
+        "institution": "Red de Gestión de Economía Circular (RGDEC)",
+        "period": "En curso",
+        "additional": "Formación especializada en principios de economía circular y sostenibilidad aplicada a procesos industriales"
       }
     ]
   },
@@ -135,7 +164,8 @@
     "sectionTitle": "Conectemos",
     "email": {
       "title": "Correo",
-      "connect": "Envíame un mensaje"
+      "connect": "Envíame un mensaje",
+      "copied": "¡Correo copiado!"
     },
     "phone": {
       "title": "Teléfono",

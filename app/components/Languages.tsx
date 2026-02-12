@@ -14,19 +14,12 @@ type TranslationFunction = {
 const LanguageProficiency = ({
   name,
   proficiency,
-  level,
   index,
 }: {
   name: string
   proficiency: string
-  level: number
   index: number
 }) => {
-  // Generate dots for proficiency level
-  const dots = Array.from({ length: 5 }).map((_, i) => (
-    <div key={i} className={`w-3 h-3 rounded-full ${i < level ? "bg-indigo-500" : "bg-slate-700"}`}></div>
-  ))
-
   return (
     <motion.div
       className="bg-slate-800 p-6 rounded-xl border border-indigo-500/20 shadow-lg hover:border-indigo-500/40 transition-all duration-300"
@@ -42,9 +35,7 @@ const LanguageProficiency = ({
         <h3 className="text-2xl font-bold text-white">{name}</h3>
       </div>
 
-      <p className="text-slate-300 mb-4">{proficiency}</p>
-
-      <div className="flex space-x-2">{dots}</div>
+      <p className="text-slate-300 text-lg">{proficiency}</p>
     </motion.div>
   )
 }
@@ -56,12 +47,10 @@ export default function Languages() {
     {
       name: t('languages.spanish.name'),
       proficiency: t('languages.spanish.proficiency'),
-      level: 5,
     },
     {
       name: t('languages.english.name'),
       proficiency: t('languages.english.proficiency'),
-      level: 4,
     },
   ]
 
@@ -79,7 +68,6 @@ export default function Languages() {
               key={index}
               name={lang.name}
               proficiency={lang.proficiency}
-              level={lang.level}
               index={index}
             />
           ))}

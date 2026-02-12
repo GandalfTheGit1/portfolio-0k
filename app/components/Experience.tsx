@@ -17,55 +17,55 @@ interface Project {
 
 interface ExperienceItem {
   period: string;
-  role: string;
-  company: string;
+  title: string;
+  description: string;
   color: string;
   type: string;
-  projects: Project[];
+  skills: string[];
   key: string;
 }
 
 export default function Experience() {
   const { t } = useI18n() as { t: TranslationFunction };
   
-  const getProjects = (key: string): Project[] => {
+  const getSkills = (key: string): string[] => {
     try {
-      const projects = t<Project[]>(`experience.${key}.projects`, { returnObjects: true });
-      return Array.isArray(projects) ? projects : [];
+      const skills = t<string[]>(`experience.${key}.skills`, { returnObjects: true });
+      return Array.isArray(skills) ? skills : [];
     } catch (error) {
-      console.error(`Error loading projects for ${key}:`, error);
+      console.error(`Error loading skills for ${key}:`, error);
       return [];
     }
   };
   
   const experiences: ExperienceItem[] = [
     {
-      period: t("experience.periods.freelance"),
-      role: t("experience.freelance.role"),
-      company: t("experience.freelance.company"),
-      color: "indigo",
-      type: "professional",
-      projects: getProjects("freelance"),
-      key: "freelance"
+      period: t("experience.periods.2020_2021"),
+      title: t("experience.automationDevelopment.title"),
+      description: t("experience.automationDevelopment.description"),
+      color: "green",
+      type: "technical",
+      skills: getSkills("automationDevelopment"),
+      key: "automationDevelopment"
     },
     {
-      period: t("experience.periods.hardwareSpecialist"),
-      role: t("experience.hardwareSpecialist.role"),
-      company: t("experience.hardwareSpecialist.company"),
+      period: t("experience.periods.2021_Present"),
+      title: t("experience.fullstackDevelopment.title"),
+      description: t("experience.fullstackDevelopment.description"),
       color: "blue",
-      type: "professional",
-      projects: getProjects("hardwareSpecialist"),
-      key: "hardwareSpecialist"
+      type: "technical",
+      skills: getSkills("fullstackDevelopment"),
+      key: "fullstackDevelopment"
     },
     {
-      period: t("experience.periods.education"),
-      role: t("experience.education.role"),
-      company: t("experience.education.company"),
-      color: "violet",
-      type: "education",
-      projects: getProjects("education"),
-      key: "education"
-    },
+      period: t("experience.periods.2021_Present"),
+      title: t("experience.financeTechnical.title"),
+      description: t("experience.financeTechnical.description"),
+      color: "orange",
+      type: "finance",
+      skills: getSkills("financeTechnical"),
+      key: "financeTechnical"
+    }
   ]
 
   return (
@@ -122,10 +122,12 @@ export default function Experience() {
                     <h3 className="text-2xl font-bold text-white flex items-center gap-2 font-display">
                       {exp.type === "leadership" ? (
                         <Users className={`w-5 h-5 text-${exp.color}-400`} />
+                      ) : exp.type === "education" ? (
+                        <Crown className={`w-5 h-5 text-${exp.color}-400`} />
                       ) : (
                         <Zap className={`w-5 h-5 text-${exp.color}-400`} />
                       )}
-                      {exp.role}
+                      {exp.title}
                     </h3>
                     <div className="flex items-center text-indigo-400 mt-2 md:mt-0">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -133,32 +135,15 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <div className="flex items-center mb-6">
-                    <MapPin className="w-4 h-4 text-slate-400 mr-1" />
-                    <span className="text-slate-300">{exp.company}</span>
-                    {exp.type === "leadership" && (
-                      <span className="ml-3 px-2 py-1 bg-violet-500/20 text-violet-300 text-xs rounded-full border border-violet-500/30">
-                        {t("experience.labels.leadership")}
-                      </span>
-                    )}
-                  </div>
+                  <p className="text-slate-300 mb-4">{exp.description}</p>
 
-                  <div className="space-y-4">
-                    {exp.projects.map((project: Project, i: number) => (
-                      <motion.div
-                        key={i}
-                        className="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 group hover:border-indigo-500/30 transition-colors duration-300"
-                        whileHover={{ x: 5 }}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: i * 0.1 + 0.2 }}
-                      >
-                        <h4 className="text-lg font-semibold text-white mb-2">{project.title}</h4>
-                        <p className="text-slate-300">{project.description}</p>
-                      </motion.div>
-                    ))}
-                  </div>
+                  {exp.skills.length > 0 && (
+                    <ul className="list-disc list-inside space-y-1 text-slate-300">
+                      {exp.skills.map((skill: string, i: number) => (
+                        <li key={i}>{skill}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             </motion.div>

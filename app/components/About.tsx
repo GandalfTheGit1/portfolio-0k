@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Code, Database, Server, Brain, Clipboard, Settings } from "lucide-react"
+import { Code, Database, Server, Brain, Clipboard, Settings, TrendingUp } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import { useI18n } from "@/app/components/I18nProvider"
 import { useEffect, useState, useRef } from "react"
@@ -96,9 +96,9 @@ export default function About() {
       description: t("about.skills.business.desc"),
     },
     {
-      icon: <Settings className="w-8 h-8 text-teal-400" />,
-      title: t("about.skills.other.title"),
-      description: t("about.skills.other.desc"),
+      icon: <TrendingUp className="w-8 h-8 text-green-400" />,
+      title: t("about.skills.finance.title"),
+      description: t("about.skills.finance.desc"),
     },
   ]
 
@@ -137,12 +137,12 @@ export default function About() {
               </div>
 
               <p className="text-xl text-slate-300 leading-relaxed mb-6">{t("about.p1")}</p>
-              <p className="text-xl text-slate-300 leading-relaxed">{t("about.p2")}</p>
+              <p className="text-xl text-slate-300 leading-relaxed">{t("about.p3")}</p>
             </div>
           </motion.div>
 
           <motion.div
-            className="md:w-1/2 grid grid-cols-2 gap-6"
+            className="md:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-6"
             initial={{ opacity: 0, x: 50, y: 50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}

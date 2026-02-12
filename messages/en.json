@@ -35,8 +35,9 @@
   "about": {
     "sectionTitle": "About Me",
     "roleHeading": "Fullstack Developer & Automation Specialist",
-    "p1": "Fullstack developer with experience in internal systems, business process automation and computer hardware repair. Specialized in React, Next.js, Nest.js, Supabase and AI technologies.",
-    "p2": "Background in Accounting and Finance with a strong focus on tech solutions for business. Over 8 projects delivered for business management in shipping, exports and retail.",
+    "p1": "Fullstack developer with experience in internal systems, business process automation and financial management. Specialized in React, Next.js, Nest.js, Supabase and AI technologies.",
+    "p2": "Background in Accounting and Finance with professional experience in auditing, internal control and project management. Currently Project Administrator at MPM AMCOR and part of the team for the \"CUBA CIRCULAR\" project funded by the German Federal Ministry for the Environment.",
+    "p3": "Over 8 projects developed for business management in shipping, exports and retail, combining technical knowledge with business vision.",
     "skills": {
       "frontend": {
         "title": "Frontend",
@@ -58,6 +59,10 @@
         "title": "Business",
         "desc": "Accounting, Finance, Management"
       },
+      "finance": {
+        "title": "Finance & Management",
+        "desc": "Financial Analysis, Risk Management, Accounting Records, Auditing, Budget Control"
+      },
       "other": {
         "title": "Other",
         "desc": "React Native, Hardware Repair"
@@ -66,59 +71,67 @@
   },
   "experience": {
     "sectionTitle": "Experience",
-    "freelance": {
-      "role": "Fullstack Developer Freelance",
-      "company": "Independent Projects",
-      "projects": [
-        {
-          "title": "🚀 Business Automation Systems",
-          "description": "Development of over 8 automation projects for shipping, export, and retail companies. Implementation of automated workflows with n8n and custom management systems."
-        },
-        {
-          "title": "💼 Internal Management Solutions",
-          "description": "Creation of internal systems for business process optimization, including inventory management, shipment tracking, and financial reporting automation."
-        },
-        {
-          "title": "🤖 AI and LangChain Integration",
-          "description": "Implementation of AI solutions using LangChain and LangGraph for customer service process automation and business data analysis."
-        }
+    "periods": {
+      "2025": "2025",
+      "2024_2025": "2024 - 2025",
+      "2021_2023": "2021 - 2025",
+      "2020_2021": "2020 - 2021",
+      "2021_2025": "2021 - 2025"
+    },
+    "projectLeadership": {
+      "title": "Project Leadership & Management",
+      "description": "Leading strategic projects and investment development initiatives with focus on sustainable technology implementation and international collaboration.",
+      "skills": [
+        "Strategic project planning and budgetary control",
+        "Stakeholder coordination and communication",
+        "Investment proposal design and evaluation",
+        "Risk management and mitigation strategies",
+        "International project collaboration (Germany-Cuba)"
       ]
     },
-    "hardwareSpecialist": {
-      "role": "Hardware Repair Specialist",
-      "company": "Independent Technical Services",
-      "projects": [
-        {
-          "title": "🔨 Equipment Diagnosis and Repair",
-          "description": "Diagnosis, repair, and maintenance of computers, laptops, and IT equipment. Hardware and software troubleshooting for individuals and small businesses."
-        },
-        {
-          "title": "💻 Comprehensive Technical Support",
-          "description": "Provision of technical support services, operating system installation, network configuration, and IT equipment purchasing advice."
-        }
+    "automationDevelopment": {
+      "title": "Automation & AI Development",
+      "description": "Developing intelligent automation solutions and AI-powered systems for business process optimization and circular economy implementation.",
+      "skills": [
+        "AI integration with LangChain and LangGraph",
+        "Workflow automation with n8n",
+        "Circular economy technology implementation",
+        "Business process automation design",
+        "Data analysis and RAG systems"
+      ]
+    },
+    "fullstackDevelopment": {
+      "title": "Accounting and Finance Student",
+      "description": "Academic Education",
+      "skills": [
+        "📊 Business Fundamentals",
+        "Solid training in accounting principles, financial analysis, and business management. Theoretical foundation that complements the development of technological solutions for businesses.",
+        "💡 Business Vision",
+        "Development of deep understanding of business processes, enabling the creation of more effective technological solutions aligned with commercial objectives."
+      ]
+    },
+    "financeTechnical": {
+      "title": "Finance & Technical Support",
+      "description": "Combining financial expertise with technical skills in accounting systems, hardware maintenance, and business process optimization.",
+      "skills": [
+        "Financial accounting and asset management",
+        "Hardware repair and technical support",
+        "Accounting system implementation",
+        "Business process analysis",
+        "Technical troubleshooting and maintenance"
       ]
     },
     "education": {
-      "role": "Accounting and Finance Student",
-      "company": "Academic Education",
-      "projects": [
-        {
-          "title": "📊 Business Fundamentals",
-          "description": "Solid training in accounting principles, financial analysis, and business management. Theoretical foundation that complements the development of technological solutions for businesses."
-        },
-        {
-          "title": "💡 Business Vision",
-          "description": "Development of deep understanding of business processes, enabling the creation of more effective technological solutions aligned with commercial objectives."
-        }
+      "title": "Education & Continuous Learning",
+      "description": "Academic foundation in accounting and finance complemented by specialized training in emerging technologies and sustainable business practices.",
+      "skills": [
+        "Accounting and financial principles",
+        "Business management and strategy",
+        "Circular economy and sustainability",
+        "Design thinking methodologies",
+        "Advanced automation techniques",
+        "Professional communication (English B2)"
       ]
-    },
-    "periods": {
-      "freelance": "2021 - Present",
-      "hardwareSpecialist": "2020 - 2021",
-      "education": "2021 - 2025"
-    },
-    "labels": {
-      "leadership": "Leadership"
     }
   },
   "education": {
@@ -135,6 +148,30 @@
         "institution": "University of Computer Sciences",
         "period": "2020 – 2021",
         "additional": "Fundamentals of programming and software development"
+      },
+      {
+        "degree": "Advanced English B2 Course",
+        "institution": "",
+        "period": "June 2023",
+        "additional": "Advanced level English certification for professional communication"
+      },
+      {
+        "degree": "PostDoctorate in Circular Economy",
+        "institution": "Circular Economy Management Network (RGDEC)",
+        "period": "In Progress",
+        "additional": "Specialized training in circular economy principles and sustainability applied to industrial processes"
+      },
+      {
+        "degree": "Design Thinking",
+        "institution": "Cámara de Comercio de Bogotá",
+        "period": "2023",
+        "additional": "Course on design thinking methodologies for innovation and problem-solving"
+      },
+      {
+        "degree": "Automation for Market Research",
+        "institution": "Humboldt University of Berlin",
+        "period": "2024",
+        "additional": "Specialized course in automation techniques and tools for market research and data analysis"
       }
     ]
   },
@@ -153,7 +190,8 @@
     "sectionTitle": "Let's Connect",
     "email": {
       "title": "Email",
-      "connect": "Send me a message"
+      "connect": "Send me a message",
+      "copied": "Email copied!"
     },
     "phone": {
       "title": "Phone",
